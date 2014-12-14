@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "utilities.h"
+#include "addprogrammerdialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -10,10 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     currentProgrammerSortColumn = "ID";
+    currentComputerSortColumn = "ID";
 
     ui->input_search_programmers->setPlaceholderText("Search programmers...");
+    ui->input_search_computers->setPlaceholderText("Search computers...");
 
-    getAllProgrammers();
+    getAllComputers();
+    getAllProgrammers();    
 }
 
 MainWindow::~MainWindow()
@@ -25,6 +29,12 @@ void MainWindow::getAllProgrammers()
 {
     currentProgrammers = programmerService.getAllProgrammers(currentProgrammerSortColumn);
     displayAllProgrammers();
+}
+
+void MainWindow::getAllComputers()
+{
+    currentComputers = computerService.getAllComputers(currentComputerSortColumn);
+    displayAllComputers();
 }
 
 void MainWindow::displayAllProgrammers()
@@ -49,6 +59,9 @@ void MainWindow::displayAllProgrammers()
             QString progDead = QString::fromStdString(utils::int2str(currentProgrammer.getDY()));
             QString progSex = QString::fromStdString(currentProgrammer.getSex());
 
+            if(progDead == "0")
+                progDead = "-";
+
             int currentRow = currentlyDisplayedProgrammers.size();
 
             ui->table_programmers->setItem(currentRow, 0, new QTableWidgetItem(progName));
@@ -64,7 +77,68 @@ void MainWindow::displayAllProgrammers()
     ui->table_programmers->setRowCount(currentlyDisplayedProgrammers.size());
 }
 
+void MainWindow::displayAllComputers()
+{
+    ui->table_computers->clearContents();
+
+    ui->table_computers->setRowCount(currentComputers.size());
+
+    currentlyDisplayedComputers.clear();
+
+    for(unsigned int i = 0; i < currentComputers.size(); ++i)
+    {
+        Computer currentComputer = currentComputers[i];
+
+        string searchString = ui->input_search_computers->text().toStdString();
+
+        if(currentComputer.contains(searchString))
+        {
+            QString compName = QString::fromStdString(currentComputer.getName());
+            QString compType = QString::fromStdString(currentComputer.getType());
+            QString compBuildYear = QString::fromStdString(utils::int2str(currentComputer.getBuildYear()));
+            bool compBuiltTemp = currentComputer.getBuild();
+            QString compBuilt;
+
+            if(compBuiltTemp)
+                compBuilt = "Yes";
+            else
+                compBuilt = "No";
+
+            int currentRow = currentlyDisplayedComputers.size();
+
+            ui->table_computers->setItem(currentRow, 0, new QTableWidgetItem(compName));
+            ui->table_computers->setItem(currentRow, 1, new QTableWidgetItem(compType));
+            ui->table_computers->setItem(currentRow, 2, new QTableWidgetItem(compBuildYear));
+            ui->table_computers->setItem(currentRow, 3, new QTableWidgetItem(compBuilt));
+
+            currentlyDisplayedComputers.push_back(currentComputer);
+        }
+    }
+
+    ui->table_computers->setRowCount(currentlyDisplayedComputers.size());
+}
+
 void MainWindow::on_input_search_programmers_textChanged(const QString &arg1)
 {
     displayAllProgrammers();
+}
+
+void MainWindow::on_input_search_computers_textChanged(const QString &arg1)
+{
+    displayAllComputers();
+}
+
+void MainWindow::on_tab_choice_tabBarClicked(int index)
+{
+    switch(index)
+    {
+    case 0: displayAllProgrammers(); break;
+    case 1: displayAllComputers(); break;
+    }
+}
+
+void MainWindow::on_button_add_programmer_clicked()
+{
+    AddProgrammerDialog addProgrammerDialog;
+    addProgrammerDialog.exec();
 }

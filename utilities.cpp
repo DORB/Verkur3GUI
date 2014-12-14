@@ -18,23 +18,6 @@ namespace utils {
             db.setDatabaseName("verkur.sqlite");
 
             db.open();
-
-            /*
-            if(db.open())
-            {
-                qDebug() << "It's open baby";
-                qDebug() << db.tables();
-
-                QSqlQuery query(db);
-                query.exec("SELECT * FROM Programmers");
-                qDebug() << query.isValid();
-
-                while(query.next())
-                {
-                    qDebug() << "Hæ";
-                }
-            }
-            */
         }
 
         return db;
@@ -62,5 +45,27 @@ namespace utils {
         ss >> str;
 
         return str;
+    }
+
+    bool isYear(const string& year)
+    {
+        bool result;
+
+        if(year.size() < 5 && year.size() > 0)
+        {
+            result = true;
+
+            for(unsigned int i = 0; i < year.size(); i++)
+            {
+                if(!isdigit(year[i]))
+                    result = false;
+            }
+        }
+        else
+        {
+            result = false;
+        }
+
+        return result;
     }
 }

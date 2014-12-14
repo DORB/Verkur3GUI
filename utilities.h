@@ -14,6 +14,7 @@ namespace utils {
     string str2upper(string str);
     string str2lower(string str);
     string int2str(const int& a);
+    bool isYear(const string& year);
 }
 
 #endif // UTILITIES_H

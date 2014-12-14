@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "personservice.h"
+#include "computerservice.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,18 +20,32 @@ public:
 private slots:
     void on_input_search_programmers_textChanged(const QString &arg1);
 
+    void on_input_search_computers_textChanged(const QString &arg1);
+
+    void on_tab_choice_tabBarClicked(int index);
+
+    void on_button_add_programmer_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
 
+    void getAllComputers();
+    void displayAllComputers();
+
     Ui::MainWindow *ui;
 
     PersonService programmerService;
+    ComputerService computerService;
 
     PersonContainer currentProgrammers;
     PersonContainer currentlyDisplayedProgrammers;
 
+    CompContainer currentComputers;
+    CompContainer currentlyDisplayedComputers;
+
     QString currentProgrammerSortColumn;
+    QString currentComputerSortColumn;
 };
 
 #endif // MAINWINDOW_H
