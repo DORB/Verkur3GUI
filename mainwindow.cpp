@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->input_search_programmers->setPlaceholderText("Search programmers...");
     ui->input_search_computers->setPlaceholderText("Search computers...");
 
+    ui->button_remove_programmer->setDisabled(true);
+
     getAllComputers();
     getAllProgrammers();    
 }
@@ -141,4 +143,25 @@ void MainWindow::on_button_add_programmer_clicked()
 {
     AddProgrammerDialog addProgrammerDialog;
     addProgrammerDialog.exec();
+
+    getAllProgrammers();
+}
+
+void MainWindow::on_action_new_programmer_triggered()
+{
+    AddProgrammerDialog addProgrammerDialog;
+    addProgrammerDialog.exec();
+
+    getAllProgrammers();
+}
+
+void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
+{
+    ui->button_remove_programmer->setEnabled(true);
+    qDebug() << index;
+}
+
+void MainWindow::on_button_remove_programmer_clicked()
+{
+    // programmerService.removeProgrammer();
 }

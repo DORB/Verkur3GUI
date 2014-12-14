@@ -42,3 +42,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     addprogrammerdialog.ui
+
+RESOURCES += \
+    Resources.qrc

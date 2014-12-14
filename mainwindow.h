@@ -26,6 +26,12 @@ private slots:
 
     void on_button_add_programmer_clicked();
 
+    void on_action_new_programmer_triggered();
+
+    void on_table_programmers_clicked(const QModelIndex &index);
+
+    void on_button_remove_programmer_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
