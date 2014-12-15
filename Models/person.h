@@ -11,7 +11,7 @@ class Person
 {
 public:
     Person();
-    Person(int id, string fn, string ln, int by, int dy, string s, string n);
+    Person(int id, string fn, string ln, int by, int dy, string s, string n, string ip);
     // friend ostream& operator <<(ostream& out, const Person& p);
     int getID() const;
     int getBY() const;
@@ -22,6 +22,7 @@ public:
     string getNationality() const;
     string toString();
     string getWholeName();
+    string getImagePath() const;
     bool contains(string str);
 private:
     int pid;
@@ -31,6 +32,7 @@ private:
     string last_name;
     string sex;
     string nationality;
+    string imagePath;
 };
 
 #endif // PERSON_H

@@ -9,7 +9,7 @@ void PersonRepository::addProgrammer(const Person& programmer)
 {
     QSqlQuery query(db);
 
-    query.prepare("INSERT INTO Programmers (first_name, last_name, birth_year, death_year, sex, nationality) VALUES(:first_name, :last_name, :birth_year, :death_year, :sex, :nationality)");
+    query.prepare("INSERT INTO Programmers (first_name, last_name, birth_year, death_year, sex, nationality, imagePath) VALUES(:first_name, :last_name, :birth_year, :death_year, :sex, :nationality, :imagePath)");
 
     query.bindValue(":first_name", QString::fromStdString(programmer.getFName()));
     query.bindValue(":last_name", QString::fromStdString(programmer.getLName()));
@@ -17,6 +17,7 @@ void PersonRepository::addProgrammer(const Person& programmer)
     query.bindValue(":death_year", QString::fromStdString(utils::int2str(programmer.getDY())));
     query.bindValue(":sex", QString::fromStdString(programmer.getSex()));
     query.bindValue(":nationality", QString::fromStdString(programmer.getNationality()));
+    query.bindValue(":imagePath", QString::fromStdString(programmer.getImagePath()));
 
     query.exec();
 }
@@ -47,8 +48,9 @@ PersonContainer PersonRepository::getAllProgrammers(QString sortString)
         int death_year = query.value("death_year").toInt();
         string sex = query.value("sex").toString().toStdString();
         string nationality = query.value("nationality").toString().toStdString();
+        string imagePath = query.value("image_Path").toString().toStdString();
 
-        results.push_back(Person(id, first_name, last_name, birth_year, death_year, sex, nationality));
+        results.push_back(Person(id, first_name, last_name, birth_year, death_year, sex, nationality, imagePath));
     }
 
     // qDebug() << results.size();
