@@ -1,5 +1,6 @@
 #include "utilities.h"
 #include <QString>
+#include <QDate>
 
 namespace utils {
     QSqlDatabase getDatabaseConnection()
@@ -51,7 +52,10 @@ namespace utils {
     {
         bool result;
 
-        if(year.size() < 5 && year.size() > 0)
+        QDate date = QDate::currentDate();
+        int year_now = date.year();
+
+        if(atoi(year.c_str()) <= year_now && year.size() > 0)
         {
             result = true;
 
