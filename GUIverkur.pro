@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     Repos/personrepository.cpp \
     Services/computerservice.cpp \
     Repos/computerrepository.cpp \
-    addprogrammerdialog.cpp
+    addprogrammerdialog.cpp \
+    addcomputerdialog.cpp
 
 HEADERS  += mainwindow.h \
     utilities.h \
@@ -38,10 +39,12 @@ HEADERS  += mainwindow.h \
     Repos/personrepository.h \
     Services/computerservice.h \
     Repos/computerrepository.h \
-    addprogrammerdialog.h
+    addprogrammerdialog.h \
+    addcomputerdialog.h
 
 FORMS    += mainwindow.ui \
-    addprogrammerdialog.ui
+    addprogrammerdialog.ui \
+    addcomputerdialog.ui
 
 RESOURCES += \
     Resources.qrc
