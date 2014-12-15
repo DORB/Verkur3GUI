@@ -279,3 +279,11 @@ void MainWindow::on_checkbox_programmer_descending_toggled(bool checked)
 
     getAllProgrammers();
 }
+
+void MainWindow::on_action_new_computer_triggered()
+{
+    AddComputerDialog addComputerDialog;
+    addComputerDialog.exec();
+
+    getAllComputers();
+}

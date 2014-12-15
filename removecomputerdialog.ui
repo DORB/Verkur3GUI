@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>329</width>
+    <width>445</width>
     <height>156</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>19</x>
      <y>19</y>
-     <width>291</width>
+     <width>411</width>
      <height>121</height>
     </rect>
    </property>
@@ -38,6 +38,9 @@
     </item>
     <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label_remove_computer_msg">
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -76,8 +79,6 @@
     </item>
    </layout>
   </widget>
-  <zorder>verticalLayoutWidget</zorder>
-  <zorder>verticalSpacer</zorder>
  </widget>
  <resources/>
  <connections/>
