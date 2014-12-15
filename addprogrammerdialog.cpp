@@ -42,10 +42,7 @@ void AddProgrammerDialog::on_button_add_programmer_clicked()
     string nationality = ui->input_add_programmers_nationality->text().toStdString();
     int year_of_birth = ui->input_add_programmers_year_of_birth->text().toInt();
     int year_of_death = ui->input_add_programmer_year_of_death->text().toInt();
-<<<<<<< HEAD
-    string sex = ui->input_add_programmer_sex->text().toStdString();
     string imagePath = ui->Input_image_path->text().toStdString();
-=======
 
     if(ui->check_add_programmer_not_dead->isChecked())
         year_of_death = 0;
@@ -66,7 +63,6 @@ void AddProgrammerDialog::on_button_add_programmer_clicked()
     utils::trimWS(nationality);
     utils::firstCap(nationality);
 
->>>>>>> 464f341532b35b8314cb302bcc1a4ee4abe6d35a
 
     Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
 
@@ -123,7 +119,6 @@ void AddProgrammerDialog::on_button_cancel_add_programmer_clicked()
     close();
 }
 
-<<<<<<< HEAD
 void AddProgrammerDialog::on_button_for_image_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(
@@ -133,7 +128,8 @@ void AddProgrammerDialog::on_button_for_image_clicked()
                         "Image files (*.png *.jpg *.bmp)"
                     );
     ui->Input_image_path->setText(filename);
-=======
+}
+
 void AddProgrammerDialog::validate()
 {
     bool valid = true;
@@ -240,5 +236,4 @@ void AddProgrammerDialog::on_radio_female_toggled(bool checked)
     sex_valid = true;
 
     validate();
->>>>>>> 464f341532b35b8314cb302bcc1a4ee4abe6d35a
 }
