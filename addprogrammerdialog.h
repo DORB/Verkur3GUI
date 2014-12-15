@@ -27,13 +27,36 @@ private slots:
 
     void on_button_cancel_add_programmer_clicked();
 
+<<<<<<< HEAD
     void on_button_for_image_clicked();
+=======
+    void on_input_add_programmers_first_name_textChanged(const QString &arg1);
+
+    void on_input_add_programmers_last_name_textChanged(const QString &arg1);
+
+    void on_input_add_programmers_nationality_textChanged(const QString &arg1);
+
+    void on_input_add_programmer_year_of_death_textChanged(const QString &arg1);
+
+    void on_radio_male_toggled(bool checked);
+
+    void on_radio_female_toggled(bool checked);
+>>>>>>> 464f341532b35b8314cb302bcc1a4ee4abe6d35a
 
 private:
     Ui::AddProgrammerDialog *ui;
 
     PersonService programmerService;
     ComputerService computerService;
+
+    void validate();
+
+    bool first_name_valid;
+    bool last_name_valid;
+    bool nationality_valid;
+    bool year_of_birth_valid;
+    bool year_of_death_valid;
+    bool sex_valid;
 };
 
 #endif // ADDPROGRAMMERDIALOG_H

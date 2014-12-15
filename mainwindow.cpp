@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "utilities.h"
 #include "addprogrammerdialog.h"
-
+#include "addcomputerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -173,13 +173,70 @@ void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 
 void MainWindow::on_button_remove_programmer_clicked()
 {
+    /*
     int index = ui->table_programmers->currentIndex().row();
 
-    programmerService.removeProgrammer(currentlyDisplayedProgrammers[index]);
+    RemoveProgrammerDialog removeProgrammerDialog;
+    removeProgrammerDialog.setProgrammer(currentlyDisplayedProgrammers[index]);
+    removeProgrammerDialog.exec();
+
     getAllProgrammers();
+    */
+
 }
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
 {
-    qDebug() << index.row();
+    // qDebug() << index.row();
+}
+
+void MainWindow::on_button_remove_computer_clicked()
+{
+
+}
+
+void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
+{
+    QString sort_by;
+
+    if(arg1 == "First name")
+        sort_by = "first_name";
+    if(arg1 == "Last name")
+        sort_by = "last_name";
+    if(arg1 == "Nationality")
+        sort_by = "nationality";
+    if(arg1 == "Year of Birth")
+        sort_by = "birth_year";
+    if(arg1 == "Year of Death")
+        sort_by = "death_year";
+    if(arg1 == "Sex")
+        sort_by = "sex";
+
+    currentProgrammerSortColumn = sort_by;
+
+    getAllProgrammers();
+}
+
+void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1)
+{
+    QString sort_by;
+
+    if(arg1 == "Name")
+        sort_by = "name";
+    if(arg1 == "Type")
+        sort_by = "type";
+    if(arg1 == "Build Year")
+        sort_by = "year_built";
+
+    currentComputerSortColumn = sort_by;
+
+    getAllComputers();
+}
+
+void MainWindow::on_button_add_computer_clicked()
+{
+   AddComputerDialog addComputerDialog;
+   addComputerDialog.exec();
+
+   getAllComputers();
 }
