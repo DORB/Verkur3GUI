@@ -29,13 +29,33 @@ void ViewProgrammerDialog::setProgrammer(Person person)
 
     ui->label_programmer_name->setText(QString("<h2>%1 (%2)</h2>").arg(name, lifespan));
 
-    QPixmap pixmap(QString::fromStdString(person.getImagePath()));
+    QString failPic;
 
-    int imageLabelWidth = ui->label_image_programmer->width();
+    if(person.getSex() == "M")
+        failPic = ":/pics/Images/man.png";
+    else
+        failPic = ":/pics/Images/woman.png";
 
-    QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+    if(person.getImagePath() == "")
+    {
+        QPixmap pixmap(failPic);
 
-    ui->label_image_programmer->setPixmap(scaledPixMap);
+        int imageLabelWidth = ui->label_image_programmer->width();
+
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_programmer->setPixmap(scaledPixMap);
+    }
+    else
+    {
+        QPixmap pixmap(QString::fromStdString(person.getImagePath()));
+
+        int imageLabelWidth = ui->label_image_programmer->width();
+
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_programmer->setPixmap(scaledPixMap);
+    }
 
 
     QString programmer_nationality = QString::fromStdString(person.getNationality());

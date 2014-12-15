@@ -34,7 +34,9 @@ SOURCES += main.cpp\
     removecomputerdialog.cpp \
     removeprogrammerdialog.cpp \
     viewcomputerdialog.cpp \
-    viewprogrammerdialog.cpp
+    viewprogrammerdialog.cpp \
+    Repos/relationrepository.cpp \
+    Services/relationservice.cpp
     marryprogrammerdialog.cpp
 
 HEADERS  += mainwindow.h \
@@ -51,7 +53,9 @@ HEADERS  += mainwindow.h \
     removecomputerdialog.h \
     removeprogrammerdialog.h \
     viewcomputerdialog.h \
-    viewprogrammerdialog.h
+    viewprogrammerdialog.h \
+    Repos/relationrepository.h \
+    Services/relationservice.h
     marryprogrammerdialog.h
 
 FORMS    += mainwindow.ui \

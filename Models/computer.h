@@ -20,7 +20,6 @@ public:
     string getimagePath() const;
     string toString();
     bool contains(string str);
-    // friend ostream& operator <<(ostream& out, const Computer& listed);
 private:
     int cid;
     string name;
