@@ -257,6 +257,13 @@
               </item>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="checkbox_computers_descending">
+              <property name="text">
+               <string>Descending</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item>
