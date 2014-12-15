@@ -28,7 +28,10 @@ void ViewComputerDialog::setComputer(Computer computer)
 
    ui->label_image_computer->setPixmap(scaledPixMap);
 
-   ui->label_computer_type->setText(QString().arg(QString::fromStdString(type.toString())));
+
+
+
+//   ui->label_computer_type->setText(QString().arg(QString::fromStdString(type.toString())));
 
 
 //   QPixmap pixmap(QString::fromStdString(car.getImagePath()));
