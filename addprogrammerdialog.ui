@@ -23,23 +23,26 @@
    <item>
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>&lt;h1&gt;Add new Programmer&lt;/h1&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Add new &lt;/span&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600; color:#636363;&quot;&gt;Programmer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
+     <item row="7" column="1">
+      <widget class="QCheckBox" name="check_add_programmer_not_dead">
        <property name="text">
-        <string>First Name</string>
+        <string>Not dead</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Last Name</string>
+     <item row="6" column="0">
+      <widget class="QLineEdit" name="input_add_programmers_year_of_birth">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -53,6 +56,13 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Last Name</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="input_add_programmers_last_name">
        <property name="maximumSize">
@@ -63,10 +73,33 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
+     <item row="5" column="1">
+      <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Nationality</string>
+        <string>Year of death</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="input_add_programmer_year_of_death">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Year of birth</string>
        </property>
       </widget>
      </item>
@@ -83,6 +116,13 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Nationality</string>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="0">
       <widget class="QLineEdit" name="input_add_programmers_nationality">
        <property name="maximumSize">
@@ -93,60 +133,24 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="input_add_programmer_sex">
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>First Name</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="radio_male">
        <property name="text">
-        <string>Year of birth</string>
+        <string>Male</string>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLabel" name="label_5">
+      <widget class="QRadioButton" name="radio_female">
        <property name="text">
-        <string>Year of death</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLineEdit" name="input_add_programmers_year_of_birth">
-       <property name="maximumSize">
-        <size>
-         <width>50</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="input_add_programmer_year_of_death">
-       <property name="maximumSize">
-        <size>
-         <width>50</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QCheckBox" name="check_add_programmer_not_dead">
-       <property name="text">
-        <string>Not dead</string>
+        <string>Female</string>
        </property>
       </widget>
      </item>
@@ -200,7 +204,6 @@
   <tabstop>input_add_programmers_first_name</tabstop>
   <tabstop>input_add_programmers_last_name</tabstop>
   <tabstop>input_add_programmers_nationality</tabstop>
-  <tabstop>input_add_programmer_sex</tabstop>
   <tabstop>input_add_programmers_year_of_birth</tabstop>
   <tabstop>input_add_programmer_year_of_death</tabstop>
   <tabstop>check_add_programmer_not_dead</tabstop>

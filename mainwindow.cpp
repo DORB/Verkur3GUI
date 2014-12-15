@@ -176,7 +176,10 @@ void MainWindow::on_button_remove_programmer_clicked()
     /*
     int index = ui->table_programmers->currentIndex().row();
 
-    programmerService.removeProgrammer(currentlyDisplayedProgrammers[index]);
+    RemoveProgrammerDialog removeProgrammerDialog;
+    removeProgrammerDialog.setProgrammer(currentlyDisplayedProgrammers[index]);
+    removeProgrammerDialog.exec();
+
     getAllProgrammers();
     */
 
@@ -194,7 +197,6 @@ void MainWindow::on_button_add_computer_clicked()
     addComputerDialog.exec();
 
     getAllComputers();
-
     */
 }
 
@@ -223,8 +225,6 @@ void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
     currentProgrammerSortColumn = sort_by;
 
     getAllProgrammers();
-
-    // qDebug() << sort_by;
 }
 
 void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1)
@@ -237,8 +237,6 @@ void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString
         sort_by = "type";
     if(arg1 == "Build Year")
         sort_by = "year_built";
-
-    // qDebug() << sort_by;
 
     currentComputerSortColumn = sort_by;
 

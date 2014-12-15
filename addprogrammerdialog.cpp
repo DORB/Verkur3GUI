@@ -32,13 +32,23 @@ void AddProgrammerDialog::on_button_add_programmer_clicked()
     string nationality = ui->input_add_programmers_nationality->text().toStdString();
     int year_of_birth = ui->input_add_programmers_year_of_birth->text().toInt();
     int year_of_death = ui->input_add_programmer_year_of_death->text().toInt();
-    string sex = ui->input_add_programmer_sex->text().toStdString();
+
+    if(ui->check_add_programmer_not_dead->isChecked())
+        year_of_death = 0;
+
+    string sex;
+
+    if(ui->radio_male->isChecked())
+        sex = "M";
+    else
+        sex = "F";
+
 
     Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality);
 
     programmerService.addProgrammer(programmer);
 
-    close();
+    close(); 
 }
 
 void AddProgrammerDialog::on_input_add_programmers_year_of_birth_textChanged(const QString &arg1)
