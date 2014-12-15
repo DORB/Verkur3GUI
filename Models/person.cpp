@@ -113,3 +113,19 @@ string Person::getWholeName()
     result += this->getLName();
     return result;
 }
+
+string Person::getLifespan()
+{
+    string result = "";
+    int born = this->getBY();
+    int dead = this->getDY();
+
+    if(born != 0)
+        result += utils::int2str(born);
+    result += "-";
+    if(dead != 0)
+        result += utils::int2str(dead);
+
+    return result;
+
+}

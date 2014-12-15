@@ -19,7 +19,9 @@ ViewComputerDialog::~ViewComputerDialog()
 
 void ViewComputerDialog::setComputer(Computer computer)
 {
-    ui->label_title_computer->setText(QString("<h2>%1</h2>").arg(QString::fromStdString(computer.toString())));
+    QString name = QString::fromStdString(computer.getName());
+    QString year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
+    ui->label_title_computer->setText(QString("<h2>%1, %2</h2>").arg(name, year));
 
 
     QPixmap pixmap(QString::fromStdString(computer.getimagePath()));

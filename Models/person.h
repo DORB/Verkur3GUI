@@ -23,6 +23,7 @@ public:
     string toString();
     string getWholeName();
     string getImagePath() const;
+    string getLifespan();
     bool contains(string str);
 private:
     int pid;

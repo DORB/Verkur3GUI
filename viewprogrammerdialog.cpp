@@ -24,7 +24,10 @@ void ViewProgrammerDialog::on_pushButton_clicked()
 
 void ViewProgrammerDialog::setProgrammer(Person person)
 {
-    ui->label_programmer_name->setText(QString("<h2>%1</h2>").arg(QString::fromStdString(person.toString())));
+    QString name = QString::fromStdString(person.getWholeName());
+    QString lifespan = QString::fromStdString(person.getLifespan());
+
+    ui->label_programmer_name->setText(QString("<h2>%1 (%2)</h2>").arg(name, lifespan));
 
     QPixmap pixmap(QString::fromStdString(person.getImagePath()));
 
@@ -39,13 +42,22 @@ void ViewProgrammerDialog::setProgrammer(Person person)
 
     ui->label_programmer_nationality->setText(programmer_nationality);
 
+    QString programmer_birth_year;
 
-    QString programmer_birth_year = QString::fromStdString(utils::int2str(person.getBY()));
+    if(person.getBY() != 0)
+        programmer_birth_year = QString::fromStdString(utils::int2str(person.getBY()));
+    else
+        programmer_birth_year = "-";
+
 
     ui->label_programmer_born->setText(programmer_birth_year);
 
 
-    QString programmer_death_year = QString::fromStdString(utils::int2str(person.getDY()));
+    QString programmer_death_year;
+    if(person.getDY() != 0)
+        programmer_death_year = QString::fromStdString(utils::int2str(person.getDY()));
+    else
+        programmer_death_year = "-";
 
     ui->label_programmer_dead->setText(programmer_death_year);
 
