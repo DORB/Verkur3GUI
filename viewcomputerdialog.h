@@ -19,6 +19,9 @@ public:
 
     void setComputer(Computer computer);
 
+private slots:
+    void on_button_close_window_computer_clicked();
+
 private:
     Ui::ViewComputerDialog *ui;
 };

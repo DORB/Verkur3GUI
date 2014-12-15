@@ -122,6 +122,13 @@
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="QPushButton" name="button_close_window_computer">
+     <property name="text">
+      <string>Close Window</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
