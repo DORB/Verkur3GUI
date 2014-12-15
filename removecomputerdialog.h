@@ -1,5 +1,5 @@
-#ifndef REMOVEPROGRAMMERDIALOG_H
-#define REMOVEPROGRAMMERDIALOG_H
+#ifndef REMOVECOMPUTERDIALOG_H
+#define REMOVECOMPUTERDIALOG_H
 
 #include <QDialog>
 #include "computer.h"
@@ -31,4 +31,4 @@ private:
     ComputerService computerService;
 };
 
-#endif // REMOVEPROGRAMMERDIALOG_H
+#endif // REMOVECOMPUTERDIALOG_H

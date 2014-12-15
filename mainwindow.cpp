@@ -4,6 +4,7 @@
 #include "addprogrammerdialog.h"
 #include "addcomputerdialog.h"
 #include "removecomputerdialog.h"
+#include "removeprogrammerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -173,17 +174,19 @@ void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 }
 
 void MainWindow::on_button_remove_programmer_clicked()
-{
-    /*
+{ 
     int index = ui->table_programmers->currentIndex().row();
+    Person personRemoved = currentlyDisplayedProgrammers[index];
 
     RemoveProgrammerDialog removeProgrammerDialog;
-    removeProgrammerDialog.setProgrammer(currentlyDisplayedProgrammers[index]);
+
+    removeProgrammerDialog.setProgrammer(personRemoved);
+
+    qDebug() << QString::fromStdString(personRemoved.getFName());
+
     removeProgrammerDialog.exec();
 
     getAllProgrammers();
-    */
-
 }
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
