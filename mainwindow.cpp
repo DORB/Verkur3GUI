@@ -3,6 +3,7 @@
 #include "utilities.h"
 #include "addprogrammerdialog.h"
 #include "addcomputerdialog.h"
+#include "removecomputerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -192,7 +193,18 @@ void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
 
 void MainWindow::on_button_remove_computer_clicked()
 {
+    int index = ui->table_computers->currentIndex().row();
+    Computer computerRemoved = currentlyDisplayedComputers[index];
 
+    RemoveComputerDialog removeComputerDialog;
+
+    removeComputerDialog.setComputer(computerRemoved);
+
+    qDebug() << QString::fromStdString(computerRemoved.getName());
+
+    removeComputerDialog.exec();
+
+    getAllComputers();
 }
 
 void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)

@@ -13,3 +13,8 @@ CompContainer ComputerService::getAllComputers(QString sortString)
 {
     return computerRepository.getAllComputers(sortString);
 }
+
+void ComputerService::removeComputer(const Computer& computer)
+{
+    computerRepository.removeComputer(computer);
+}

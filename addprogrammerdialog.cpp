@@ -74,23 +74,6 @@ void AddProgrammerDialog::on_input_add_programmers_year_of_birth_textChanged(con
 
     QPalette *palette = new QPalette();
 
-    /*
-    if(!utils::isYear(year_of_birth))
-    {
-        palette->setColor(QPalette::Text,Qt::red);
-        ui->input_add_programmers_year_of_birth->setPalette(*palette);
-        year_of_birth_valid = false;
-        // ui->button_add_programmer->setDisabled(true);
-    }
-    else
-    {
-        palette->setColor(QPalette::Text,Qt::black);
-        ui->input_add_programmers_year_of_birth->setPalette(*palette);
-        year_of_birth_valid = true;
-        // ui->button_add_programmer->setEnabled(true);
-    }
-    */
-
     if(arg1.toInt() >= 0 && utils::isYear(year_of_birth))
     {
         palette->setColor(QPalette::Text,Qt::black);
@@ -174,23 +157,6 @@ void AddProgrammerDialog::on_input_add_programmer_year_of_death_textChanged(cons
     std::string year_of_death = arg1.toStdString();
 
     QPalette *palette = new QPalette();
-    /*
-
-    if(!utils::isYear(year_of_death))// && ui->input_add_programmers_year_of_birth->text().toInt() < atoi(year_of_death.c_str()))
-    {
-        palette->setColor(QPalette::Text,Qt::red);
-        ui->input_add_programmers_year_of_birth->setPalette(*palette);
-        year_of_birth_valid = false;
-        // ui->button_add_programmer->setDisabled(true);
-    }
-    else
-    {
-        palette->setColor(QPalette::Text,Qt::black);
-        ui->input_add_programmers_year_of_birth->setPalette(*palette);
-        year_of_birth_valid = true;
-        // ui->button_add_programmer->setEnabled(true);
-    }
-    */
 
     if(arg1.toInt() >= ui->input_add_programmers_year_of_birth->text().toInt())
     {
