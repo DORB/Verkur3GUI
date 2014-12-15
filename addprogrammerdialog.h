@@ -43,7 +43,6 @@ private:
     Ui::AddProgrammerDialog *ui;
 
     PersonService programmerService;
-    ComputerService computerService;
 
     void validate();
 
