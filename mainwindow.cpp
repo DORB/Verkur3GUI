@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "utilities.h"
 #include "addprogrammerdialog.h"
-
+#include "addcomputerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -190,16 +190,6 @@ void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
     // qDebug() << index.row();
 }
 
-void MainWindow::on_button_add_computer_clicked()
-{
-    /*
-    AddComputerDialog addComputerDialog;
-    addComputerDialog.exec();
-
-    getAllComputers();
-    */
-}
-
 void MainWindow::on_button_remove_computer_clicked()
 {
 
@@ -241,4 +231,12 @@ void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString
     currentComputerSortColumn = sort_by;
 
     getAllComputers();
+}
+
+void MainWindow::on_button_add_computer_clicked()
+{
+   AddComputerDialog addComputerDialog;
+   addComputerDialog.exec();
+
+   getAllComputers();
 }
