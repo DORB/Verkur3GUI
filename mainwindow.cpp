@@ -5,6 +5,7 @@
 #include "addcomputerdialog.h"
 #include "removecomputerdialog.h"
 #include "removeprogrammerdialog.h"
+#include "viewcomputerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -282,4 +283,13 @@ void MainWindow::on_checkbox_programmer_descending_toggled(bool checked)
         currentProgrammerSortDesc = false;
 
     getAllProgrammers();
+}
+
+void MainWindow::on_table_computers_doubleClicked(const QModelIndex &index)
+{
+    ViewComputerDialog viewComputerDialog;
+    viewComputerDialog.setComputer(currentlyDisplayedComputers[index.row()]);
+    viewComputerDialog.exec();
+
+    getAllComputers();
 }

@@ -47,6 +47,8 @@ private slots:
 
     void on_checkbox_programmer_descending_toggled(bool checked);
 
+    void on_table_computers_doubleClicked(const QModelIndex &index);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
