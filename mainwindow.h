@@ -45,6 +45,8 @@ private slots:
 
     void on_checkbox_computers_descending_toggled(bool checked);
 
+    void on_checkbox_programmer_descending_toggled(bool checked);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();

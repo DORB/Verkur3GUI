@@ -185,7 +185,6 @@ void MainWindow::on_button_remove_programmer_clicked()
 
     getAllProgrammers();
     */
-
 }
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
@@ -227,6 +226,8 @@ void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
         sort_by = "death_year";
     if(arg1 == "Sex")
         sort_by = "sex";
+    if(arg1 == "Inserted Order")
+        sort_by = "ID";
 
     currentProgrammerSortColumn = sort_by;
 
@@ -243,6 +244,8 @@ void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString
         sort_by = "type";
     if(arg1 == "Build Year")
         sort_by = "year_built";
+    if(arg1 == "Inserted Order")
+        sort_by = "ID";
 
     currentComputerSortColumn  = sort_by;
 
@@ -265,4 +268,14 @@ void MainWindow::on_checkbox_computers_descending_toggled(bool checked)
         currentComputerSortDesc = false;
 
     getAllComputers();
+}
+
+void MainWindow::on_checkbox_programmer_descending_toggled(bool checked)
+{
+    if(checked)
+        currentProgrammerSortDesc = true;
+    else
+        currentProgrammerSortDesc = false;
+
+    getAllProgrammers();
 }
