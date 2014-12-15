@@ -77,6 +77,12 @@ void MainWindow::displayAllProgrammers()
     }
 
     ui->table_programmers->setRowCount(currentlyDisplayedProgrammers.size());
+
+    ui->table_programmers->setColumnWidth(0, 300);
+    ui->table_programmers->setColumnWidth(1, 170);
+    ui->table_programmers->setColumnWidth(2, 50);
+    ui->table_programmers->setColumnWidth(3, 50);
+    ui->table_programmers->setColumnWidth(4, 30);
 }
 
 void MainWindow::displayAllComputers()
@@ -118,6 +124,10 @@ void MainWindow::displayAllComputers()
     }
 
     ui->table_computers->setRowCount(currentlyDisplayedComputers.size());
+
+    ui->table_computers->setColumnWidth(0, 300);
+    ui->table_computers->setColumnWidth(1,180);
+    ui->table_computers->setColumnWidth(2, 50);
 }
 
 void MainWindow::on_input_search_programmers_textChanged(const QString &arg1)
@@ -158,10 +168,18 @@ void MainWindow::on_action_new_programmer_triggered()
 void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 {
     ui->button_remove_programmer->setEnabled(true);
-    qDebug() << index;
+    // qDebug() << index;
 }
 
 void MainWindow::on_button_remove_programmer_clicked()
 {
-    // programmerService.removeProgrammer();
+    int index = ui->table_programmers->currentIndex().row();
+
+    programmerService.removeProgrammer(currentlyDisplayedProgrammers[index]);
+    getAllProgrammers();
+}
+
+void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
+{
+    qDebug() << index.row();
 }

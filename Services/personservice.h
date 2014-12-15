@@ -12,7 +12,7 @@ public:
     PersonService();
 
     void addProgrammer(Person programmer);
-    void removeProgrammer(Person programmer);
+    void removeProgrammer(const Person& programmer);
 
     PersonContainer getAllProgrammers(QString sortString);
 

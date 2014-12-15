@@ -32,6 +32,8 @@ private slots:
 
     void on_button_remove_programmer_clicked();
 
+    void on_table_programmers_doubleClicked(const QModelIndex &index);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
