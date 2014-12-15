@@ -32,10 +32,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>351</width>
-     <height>151</height>
+     <x>40</x>
+     <y>30</y>
+     <width>291</width>
+     <height>121</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -52,7 +52,7 @@
       </property>
      </spacer>
     </item>
-    <item>
+    <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label_remove_programmer_msg">
       <property name="text">
        <string/>
