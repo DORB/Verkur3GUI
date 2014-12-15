@@ -173,13 +173,32 @@ void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 
 void MainWindow::on_button_remove_programmer_clicked()
 {
+    /*
     int index = ui->table_programmers->currentIndex().row();
 
     programmerService.removeProgrammer(currentlyDisplayedProgrammers[index]);
     getAllProgrammers();
+    */
+
 }
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
 {
     qDebug() << index.row();
+}
+
+void MainWindow::on_button_add_computer_clicked()
+{
+    /*
+    AddComputerDialog addComputerDialog;
+    addComputerDialog.exec();
+
+    getAllComputers();
+
+    */
+}
+
+void MainWindow::on_button_remove_computer_clicked()
+{
+
 }
