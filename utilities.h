@@ -15,6 +15,8 @@ namespace utils {
     string str2lower(string str);
     string int2str(const int& a);
     bool isYear(const string& year);
+    void trimWS(string& str);
+    void firstCap(string& str);
 }
 
 #endif // UTILITIES_H

@@ -51,6 +51,15 @@ void AddProgrammerDialog::on_button_add_programmer_clicked()
     else
         sex = "F";
 
+    // Utilitization:
+
+    utils::trimWS(first_name);
+    utils::firstCap(first_name);
+    utils::trimWS(last_name);
+    utils::firstCap(last_name);
+    utils::trimWS(nationality);
+    utils::firstCap(nationality);
+
 
     Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality);
 
