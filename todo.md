@@ -1,7 +1,7 @@
 # 15/12/14
 
-* Double-click til að sýna programmer
-* Double-click til að sýna computer
+* Double-click til að sýna programmer - MN
+* Double-click til að sýna computer - Klárt á eftir smá fínpúss saman MN
 * Implementa hægrismell á töfluna
 * Implementa Relations. Hvernig??
 * Klára Remove og add fúnksjónir

@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     addcomputerdialog.cpp \
     removecomputerdialog.cpp \
     removeprogrammerdialog.cpp \
-    viewcomputerdialog.cpp
+    viewcomputerdialog.cpp \
+    viewprogrammerdialog.cpp
     marryprogrammerdialog.cpp
 
 HEADERS  += mainwindow.h \
@@ -49,7 +50,8 @@ HEADERS  += mainwindow.h \
     addcomputerdialog.h \
     removecomputerdialog.h \
     removeprogrammerdialog.h \
-    viewcomputerdialog.h
+    viewcomputerdialog.h \
+    viewprogrammerdialog.h
     marryprogrammerdialog.h
 
 FORMS    += mainwindow.ui \
@@ -57,7 +59,8 @@ FORMS    += mainwindow.ui \
     addcomputerdialog.ui \
     removecomputerdialog.ui \
     removeprogrammerdialog.ui \
-    viewcomputerdialog.ui
+    viewcomputerdialog.ui \
+    viewprogrammerdialog.ui
     marryprogrammerdialog.ui
 
 RESOURCES += \

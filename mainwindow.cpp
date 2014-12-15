@@ -7,6 +7,7 @@
 #include "removeprogrammerdialog.h"
 #include "viewcomputerdialog.h"
 #include "marryprogrammerdialog.h"
+#include "viewprogrammerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -195,7 +196,11 @@ void MainWindow::on_button_remove_programmer_clicked()
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
 {
-    // qDebug() << index.row();
+    ViewProgrammerDialog viewProgrammerDialog;
+    viewProgrammerDialog.setProgrammer(currentlyDisplayedProgrammers[index.row()]);
+    viewProgrammerDialog.exec();
+
+    getAllProgrammers();
 }
 
 void MainWindow::on_button_remove_computer_clicked()

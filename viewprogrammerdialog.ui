@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ViewComputerDialog</class>
- <widget class="QDialog" name="ViewComputerDialog">
+ <class>ViewProgrammerDialog</class>
+ <widget class="QDialog" name="ViewProgrammerDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>612</width>
-    <height>591</height>
+    <width>652</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,11 +15,17 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label_title_computer">
+    <widget class="QLabel" name="label_programmer_name">
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>30</height>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>40</height>
       </size>
      </property>
      <property name="text">
@@ -30,7 +36,7 @@
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label_image_computer">
+      <widget class="QLabel" name="label_image_programmer">
        <property name="minimumSize">
         <size>
          <width>400</width>
@@ -38,30 +44,30 @@
         </size>
        </property>
        <property name="text">
-        <string>Mynd</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Bio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Bio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Type:</string>
+            <string>Nationality:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_computer_type">
+          <widget class="QLabel" name="label_programmer_nationality">
            <property name="text">
             <string/>
            </property>
@@ -72,14 +78,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>Year Built:</string>
+            <string>Born:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_computer_year_built">
+          <widget class="QLabel" name="label_programmer_born">
            <property name="text">
             <string/>
            </property>
@@ -90,14 +96,32 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Built?</string>
+            <string>Dead</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_computer_build">
+          <widget class="QLabel" name="label_programmer_dead">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Sex:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_programmer_sex">
            <property name="text">
             <string/>
            </property>
@@ -123,7 +147,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QPushButton" name="button_close_window_computer">
+    <widget class="QPushButton" name="pushButton">
      <property name="text">
       <string>Close Window</string>
      </property>
