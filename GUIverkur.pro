@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     Repos/computerrepository.cpp \
     addprogrammerdialog.cpp \
     addcomputerdialog.cpp \
-    removecomputerdialog.cpp
+    removecomputerdialog.cpp \
+    removeprogrammerdialog.cpp
 
 HEADERS  += mainwindow.h \
     utilities.h \
@@ -44,12 +45,14 @@ HEADERS  += mainwindow.h \
     Repos/computerrepository.h \
     addprogrammerdialog.h \
     addcomputerdialog.h \
-    removecomputerdialog.h
+    removecomputerdialog.h \
+    removeprogrammerdialog.h
 
 FORMS    += mainwindow.ui \
     addprogrammerdialog.ui \
     addcomputerdialog.ui \
-    removecomputerdialog.ui
+    removecomputerdialog.ui \
+    removeprogrammerdialog.ui
 
 RESOURCES += \
     Resources.qrc
