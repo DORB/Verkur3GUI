@@ -190,16 +190,6 @@ void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
     // qDebug() << index.row();
 }
 
-void MainWindow::on_button_add_computer_clicked()
-{
-    /*
-    AddComputerDialog addComputerDialog;
-    addComputerDialog.exec();
-
-    getAllComputers();
-    */
-}
-
 void MainWindow::on_button_remove_computer_clicked()
 {
 

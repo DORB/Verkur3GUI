@@ -36,15 +36,12 @@ private slots:
 
     void on_button_add_computer_clicked();
 
-<<<<<<< HEAD
-=======
     void on_button_remove_computer_clicked();
 
     void on_dropdown_sort_by_currentIndexChanged(const QString &arg1);
 
     void on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1);
 
->>>>>>> f5f12d48a3102a3aaade721b8fb6fdfd843f4477
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
