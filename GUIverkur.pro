@@ -51,3 +51,6 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     Resources.qrc
+
+OTHER_FILES += \
+    todo.md
