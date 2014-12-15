@@ -27,7 +27,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -70,6 +70,11 @@
              <widget class="QComboBox" name="dropdown_sort_by">
               <item>
                <property name="text">
+                <string>Inserted Order</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>First name</string>
                </property>
               </item>
@@ -98,6 +103,13 @@
                 <string>Sex</string>
                </property>
               </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkbox_programmer_descending">
+              <property name="text">
+               <string>Descending</string>
+              </property>
              </widget>
             </item>
            </layout>
@@ -242,6 +254,11 @@
              <widget class="QComboBox" name="dropdown_computers_sort_by">
               <item>
                <property name="text">
+                <string>Inserted Order</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Name</string>
                </property>
               </item>
@@ -255,6 +272,13 @@
                 <string>Build Year</string>
                </property>
               </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkbox_computers_descending">
+              <property name="text">
+               <string>Descending</string>
+              </property>
              </widget>
             </item>
            </layout>

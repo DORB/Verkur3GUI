@@ -15,7 +15,7 @@ public:
     void addProgrammer(const Person& programmer);
     void removeProgrammer(const Person& programmer);
 
-    PersonContainer getAllProgrammers(QString sortString);
+    PersonContainer getAllProgrammers(QString sortString, const bool& desc);
 
 private:
     QSqlDatabase db;

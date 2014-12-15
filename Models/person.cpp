@@ -10,9 +10,10 @@ Person::Person()
     birth_year = 0;
     death_year = 0;
     nationality = "";
+    imagePath = "";
 }
 
-Person::Person(int id, string fn, string ln, int by, int dy, string s, string n)
+Person::Person(int id, string fn, string ln, int by, int dy, string s, string n, string ip)
 {
     pid = id;
     first_name = fn;
@@ -21,6 +22,7 @@ Person::Person(int id, string fn, string ln, int by, int dy, string s, string n)
     birth_year = by;
     death_year = dy;
     nationality = n;
+    imagePath = ip;
 }
 
 ostream& operator <<(ostream& out, const Person& listed)
@@ -69,6 +71,11 @@ string Person::getSex() const
 string Person::getNationality() const
 {
     return nationality;
+}
+
+string Person::getImagePath() const
+{
+    return imagePath;
 }
 
 string Person::toString()

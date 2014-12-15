@@ -9,9 +9,9 @@ void PersonService::addProgrammer(Person programmer)
     programmerRepository.addProgrammer(programmer);
 }
 
-PersonContainer PersonService::getAllProgrammers(QString sortString)
+PersonContainer PersonService::getAllProgrammers(QString sortString, const bool& desc)
 {
-    return programmerRepository.getAllProgrammers(sortString);
+    return programmerRepository.getAllProgrammers(sortString, desc);
 }
 
 void PersonService::removeProgrammer(const Person& programmer)

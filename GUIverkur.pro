@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     Services/computerservice.cpp \
     Repos/computerrepository.cpp \
     addprogrammerdialog.cpp \
-    addcomputerdialog.cpp
+    addcomputerdialog.cpp \
+    removecomputerdialog.cpp
 
 HEADERS  += mainwindow.h \
     utilities.h \
@@ -40,11 +41,16 @@ HEADERS  += mainwindow.h \
     Services/computerservice.h \
     Repos/computerrepository.h \
     addprogrammerdialog.h \
-    addcomputerdialog.h
+    addcomputerdialog.h \
+    removecomputerdialog.h
 
 FORMS    += mainwindow.ui \
     addprogrammerdialog.ui \
-    addcomputerdialog.ui
+    addcomputerdialog.ui \
+    removecomputerdialog.ui
 
 RESOURCES += \
     Resources.qrc
+
+OTHER_FILES += \
+    todo.md

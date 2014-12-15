@@ -61,7 +61,7 @@ string Computer::getimagePath() const
 string Computer::toString()
 {
     string result = this->getName() + " " + this->getType();
-    result += " " + this->getBuildYear();
+    result += " " + utils::int2str(this->getBuildYear());
 
     return result;
 }

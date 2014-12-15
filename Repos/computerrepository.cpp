@@ -30,12 +30,18 @@ void ComputerRepository::removeComputer(const Computer &computer)
     query.exec();
 }
 
-CompContainer ComputerRepository::getAllComputers(QString sortString)
+CompContainer ComputerRepository::getAllComputers(QString sortString, const bool& desc)
 {
     CompContainer results;
 
+    QString order;
+    if(desc)
+        order = "DESC";
+    else
+        order = "";
+
     QSqlQuery query(db);
-    query.prepare(QString("SELECT * FROM Computers ORDER BY %1").arg(sortString));
+    query.prepare(QString("SELECT * FROM Computers ORDER BY %1 %2").arg(sortString, order));
     query.exec();
 
     while(query.next())

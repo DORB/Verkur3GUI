@@ -27,6 +27,8 @@ private slots:
 
     void on_button_cancel_add_programmer_clicked();
 
+    void on_button_for_image_clicked();
+
     void on_input_add_programmers_first_name_textChanged(const QString &arg1);
 
     void on_input_add_programmers_last_name_textChanged(const QString &arg1);
@@ -38,6 +40,7 @@ private slots:
     void on_radio_male_toggled(bool checked);
 
     void on_radio_female_toggled(bool checked);
+
 
 private:
     Ui::AddProgrammerDialog *ui;
