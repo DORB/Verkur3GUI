@@ -15,6 +15,8 @@ TEMPLATE = app
 INCLUDEPATH += Models \
     Repos \
     Services \
+    Database \
+    Icons \
 
 
 SOURCES += main.cpp\

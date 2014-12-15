@@ -10,3 +10,4 @@
 		* Upp kemur díalógur með Search reit og töflu fyrir viðkomandi tilefni 
 		* Velja réttan einstakling/tölvu og gera OK.
 * Setja inn Tooltips allsstaðar þar sem við á! Mikilvægt!
+* Eyða útúr repository og service fælum þar sem við á
