@@ -13,7 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     currentProgrammerSortColumn = "ID";
+    currentProgrammerSortDesc = false;
     currentComputerSortColumn = "ID";
+    currentComputerSortDesc = false;
 
     ui->input_search_programmers->setPlaceholderText("Search programmers...");
     ui->input_search_computers->setPlaceholderText("Search computers...");
@@ -31,13 +33,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::getAllProgrammers()
 {
-    currentProgrammers = programmerService.getAllProgrammers(currentProgrammerSortColumn);
+    currentProgrammers = programmerService.getAllProgrammers(currentProgrammerSortColumn, currentProgrammerSortDesc);
     displayAllProgrammers();
 }
 
 void MainWindow::getAllComputers()
 {
-    currentComputers = computerService.getAllComputers(currentComputerSortColumn);
+    currentComputers = computerService.getAllComputers(currentComputerSortColumn, currentComputerSortDesc);
     displayAllComputers();
 }
 
@@ -203,6 +205,8 @@ void MainWindow::on_button_remove_computer_clicked()
 
     removeComputerDialog.setComputer(computerRemoved);
 
+    // Veit ekki hvað er í gangi hér, en fallið að ofan virkar ekki nema
+    // ég geri qDebug á þetta hér fyrir neðan. Mjög furðulegt.
     qDebug() << QString::fromStdString(computerRemoved.getName());
 
     removeComputerDialog.exec();
@@ -226,6 +230,8 @@ void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
         sort_by = "death_year";
     if(arg1 == "Sex")
         sort_by = "sex";
+    if(arg1 == "Inserted Order")
+        sort_by = "ID";
 
     currentProgrammerSortColumn = sort_by;
 
@@ -242,8 +248,10 @@ void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString
         sort_by = "type";
     if(arg1 == "Build Year")
         sort_by = "year_built";
+    if(arg1 == "Inserted Order")
+        sort_by = "ID";
 
-    currentComputerSortColumn = sort_by;
+    currentComputerSortColumn  = sort_by;
 
     getAllComputers();
 }
@@ -254,4 +262,24 @@ void MainWindow::on_button_add_computer_clicked()
    addComputerDialog.exec();
 
    getAllComputers();
+}
+
+void MainWindow::on_checkbox_computers_descending_toggled(bool checked)
+{
+    if(checked)
+        currentComputerSortDesc = true;
+    else
+        currentComputerSortDesc = false;
+
+    getAllComputers();
+}
+
+void MainWindow::on_checkbox_programmer_descending_toggled(bool checked)
+{
+    if(checked)
+        currentProgrammerSortDesc = true;
+    else
+        currentProgrammerSortDesc = false;
+
+    getAllProgrammers();
 }

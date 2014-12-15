@@ -43,6 +43,10 @@ private slots:
 
     void on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1);
 
+    void on_checkbox_computers_descending_toggled(bool checked);
+
+    void on_checkbox_programmer_descending_toggled(bool checked);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
@@ -62,7 +66,9 @@ private:
     CompContainer currentlyDisplayedComputers;
 
     QString currentProgrammerSortColumn;
+    bool currentProgrammerSortDesc;
     QString currentComputerSortColumn;
+    bool currentComputerSortDesc;
 };
 
 #endif // MAINWINDOW_H

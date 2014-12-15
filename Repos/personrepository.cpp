@@ -31,12 +31,17 @@ void PersonRepository::removeProgrammer(const Person &programmer)
     query.exec();
 }
 
-PersonContainer PersonRepository::getAllProgrammers(QString sortString)
+PersonContainer PersonRepository::getAllProgrammers(QString sortString, const bool& desc)
 {
     PersonContainer results;
+    QString order;
+    if(desc)
+        order = "DESC";
+    else
+        order = "";
 
     QSqlQuery query(db);
-    query.prepare(QString("SELECT * FROM Programmers ORDER BY %1").arg(sortString));
+    query.prepare(QString("SELECT * FROM Programmers ORDER BY %1 %2").arg(sortString, order));
     query.exec();
 
     while(query.next())
@@ -48,7 +53,7 @@ PersonContainer PersonRepository::getAllProgrammers(QString sortString)
         int death_year = query.value("death_year").toInt();
         string sex = query.value("sex").toString().toStdString();
         string nationality = query.value("nationality").toString().toStdString();
-        string imagePath = query.value("image_Path").toString().toStdString();
+        string imagePath = query.value("imagePath").toString().toStdString();
 
         results.push_back(Person(id, first_name, last_name, birth_year, death_year, sex, nationality, imagePath));
     }

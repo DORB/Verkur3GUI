@@ -15,7 +15,7 @@ public:
     void addComputer(const Computer& computer);
     void removeComputer(const Computer& computer);
 
-    CompContainer getAllComputers(QString sortString);
+    CompContainer getAllComputers(QString sortString, const bool& desc);
 
 private:
     QSqlDatabase db;

@@ -3,7 +3,4 @@
         <file>Icons/computer_icon.png</file>
         <file>Icons/programmer_icon.png</file>
     </qresource>
-    <qresource prefix="/database">
-        <file>Database/verkur.sqlite</file>
-    </qresource>
 </RCC>
