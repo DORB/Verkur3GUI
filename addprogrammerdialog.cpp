@@ -1,5 +1,7 @@
 #include "addprogrammerdialog.h"
 #include "ui_addprogrammerdialog.h"
+#include <QFileDialog>
+#include <QDebug>
 
 AddProgrammerDialog::AddProgrammerDialog(QWidget *parent) :
     QDialog(parent),
@@ -33,8 +35,9 @@ void AddProgrammerDialog::on_button_add_programmer_clicked()
     int year_of_birth = ui->input_add_programmers_year_of_birth->text().toInt();
     int year_of_death = ui->input_add_programmer_year_of_death->text().toInt();
     string sex = ui->input_add_programmer_sex->text().toStdString();
+    string imagePath = ui->Input_image_path->text().toStdString();
 
-    Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality);
+    Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
 
     programmerService.addProgrammer(programmer);
 
@@ -66,4 +69,15 @@ void AddProgrammerDialog::on_input_add_programmers_year_of_birth_textChanged(con
 void AddProgrammerDialog::on_button_cancel_add_programmer_clicked()
 {
     close();
+}
+
+void AddProgrammerDialog::on_button_for_image_clicked()
+{
+    QString filename = QFileDialog::getOpenFileName(
+                        this,
+                        "Browse for image",
+                        "",
+                        "Image files (*.png *.jpg *.bmp)"
+                    );
+    ui->Input_image_path->setText(filename);
 }

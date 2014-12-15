@@ -27,6 +27,8 @@ private slots:
 
     void on_button_cancel_add_programmer_clicked();
 
+    void on_button_for_image_clicked();
+
 private:
     Ui::AddProgrammerDialog *ui;
 
