@@ -307,6 +307,14 @@ void MainWindow::on_action_new_computer_triggered()
     getAllComputers();
 }
 
+void MainWindow::on_action_New_Computer_triggered()
+{
+    AddComputerDialog addComputerDialog;
+    addComputerDialog.exec();
+
+    getAllComputers();
+}
+
 /*void MainWindow::on_button_programmers_marry_clicked()
 {
     int index = ui->table_programmers->currentIndex().row();
@@ -322,3 +330,56 @@ void MainWindow::on_action_new_computer_triggered()
 
     marryProgrammerDialog.exec();
 }*/
+void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu menu;
+
+    menu.addAction(ui->action_New_Computer);
+    menu.addAction(ui->action_Delete_Computer);
+
+    menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
+}
+
+void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu menu;
+
+    menu.addAction(ui->action_new_programmer);
+    menu.addAction(ui->action_Delete_Programmer);
+
+    menu.exec(ui->table_programmers->viewport()->mapToGlobal(pos));
+}
+
+void MainWindow::on_action_Delete_Computer_triggered()
+{
+    int index = ui->table_computers->currentIndex().row();
+    Computer computerRemoved = currentlyDisplayedComputers[index];
+
+    RemoveComputerDialog removeComputerDialog;
+
+    removeComputerDialog.setComputer(computerRemoved);
+
+    // Veit ekki hvað er í gangi hér, en fallið að ofan virkar ekki nema
+    // ég geri qDebug á þetta hér fyrir neðan. Mjög furðulegt.
+    qDebug() << QString::fromStdString(computerRemoved.getName());
+
+    removeComputerDialog.exec();
+
+    getAllComputers();
+}
+
+void MainWindow::on_action_Delete_Programmer_triggered()
+{
+    int index = ui->table_programmers->currentIndex().row();
+    Person personRemoved = currentlyDisplayedProgrammers[index];
+
+    RemoveProgrammerDialog removeProgrammerDialog;
+
+    removeProgrammerDialog.setProgrammer(personRemoved);
+
+    qDebug() << QString::fromStdString(personRemoved.getFName());
+
+    removeProgrammerDialog.exec();
+
+    getAllProgrammers();
+}

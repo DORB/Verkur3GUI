@@ -123,6 +123,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="table_programmers">
+            <property name="contextMenuPolicy">
+             <enum>Qt::CustomContextMenu</enum>
+            </property>
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
@@ -299,6 +302,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="table_computers">
+            <property name="contextMenuPolicy">
+             <enum>Qt::CustomContextMenu</enum>
+            </property>
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
@@ -394,7 +400,7 @@
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -438,6 +444,30 @@
   <action name="action_new_relations">
    <property name="text">
     <string>New Relations</string>
+   </property>
+  </action>
+  <action name="action_New_Computer">
+   <property name="text">
+    <string>New Computer</string>
+   </property>
+   <property name="toolTip">
+    <string>New Computer</string>
+   </property>
+  </action>
+  <action name="action_Delete_Computer">
+   <property name="text">
+    <string>Delete Computer</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Computer</string>
+   </property>
+  </action>
+  <action name="action_Delete_Programmer">
+   <property name="text">
+    <string>Delete Programmer</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Programmer</string>
    </property>
   </action>
  </widget>
