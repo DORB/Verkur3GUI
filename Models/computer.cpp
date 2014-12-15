@@ -4,13 +4,14 @@ Computer::Computer()
 {
 }
 
-Computer::Computer(int id, string n, string t, int yb, bool b)
+Computer::Computer(int id, string n, string t, int yb, bool b, string ip)
 {
     cid = id;
     name = n;
     type = t;
     year_built = yb;
     build = b;
+    imagePath = ip;
 }
 
 /*
@@ -50,6 +51,11 @@ int Computer::getBuildYear() const
 bool Computer::getBuild() const
 {
     return build;
+}
+
+string Computer::getimagePath() const
+{
+    return imagePath;
 }
 
 string Computer::toString()
