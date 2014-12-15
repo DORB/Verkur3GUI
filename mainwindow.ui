@@ -32,14 +32,72 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QLineEdit" name="input_search_programmers">
-            <property name="maximumSize">
-             <size>
-              <width>300</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLineEdit" name="input_search_programmers">
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_sort_by">
+              <property name="text">
+               <string>Sort by</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="dropdown_sort_by">
+              <item>
+               <property name="text">
+                <string>First name</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Last name</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Nationality</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Year of Birth</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Year of Death</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Sex</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <widget class="QTableWidget" name="table_programmers">

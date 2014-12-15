@@ -202,3 +202,27 @@ void MainWindow::on_button_remove_computer_clicked()
 {
 
 }
+
+void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
+{
+    QString sort_by;
+
+    if(arg1 == "First name")
+        sort_by = "first_name";
+    if(arg1 == "Last name")
+        sort_by = "last_name";
+    if(arg1 == "Nationality")
+        sort_by = "nationality";
+    if(arg1 == "Year of Birth")
+        sort_by = "birth_year";
+    if(arg1 == "Year of Death")
+        sort_by = "death_year";
+    if(arg1 == "Sex")
+        sort_by = "sex";
+
+    currentProgrammerSortColumn = sort_by;
+
+    getAllProgrammers();
+
+    qDebug() << sort_by;
+}

@@ -38,6 +38,8 @@ private slots:
 
     void on_button_remove_computer_clicked();
 
+    void on_dropdown_sort_by_currentIndexChanged(const QString &arg1);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
