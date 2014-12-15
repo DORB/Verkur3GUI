@@ -5,6 +5,7 @@
 #include "addcomputerdialog.h"
 #include "removecomputerdialog.h"
 #include "removeprogrammerdialog.h"
+#include "marryprogrammerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -290,4 +291,20 @@ void MainWindow::on_action_new_computer_triggered()
     addComputerDialog.exec();
 
     getAllComputers();
+}
+
+void MainWindow::on_button_programmers_marry_clicked()
+{
+    int index = ui->table_programmers->currentIndex().row();
+    Person programmerMarrying = currentlyDisplayedProgrammers[index];
+
+    MarryProgrammerDialog marryProgrammerDialog;
+
+    marryProgrammerDialog.setProgrammer(programmerMarrying);
+
+    // Veit ekki hvað er í gangi hér, en fallið að ofan virkar ekki nema
+    // ég geri qDebug á þetta hér fyrir neðan. Mjög furðulegt.
+    qDebug() << QString::fromStdString(programmerMarrying.getFName());
+
+    marryProgrammerDialog.exec();
 }

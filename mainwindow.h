@@ -49,6 +49,8 @@ private slots:
 
     void on_action_new_computer_triggered();
 
+    void on_button_programmers_marry_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
