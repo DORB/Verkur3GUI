@@ -40,6 +40,8 @@ private slots:
 
     void on_dropdown_sort_by_currentIndexChanged(const QString &arg1);
 
+    void on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();

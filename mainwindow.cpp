@@ -184,7 +184,7 @@ void MainWindow::on_button_remove_programmer_clicked()
 
 void MainWindow::on_table_programmers_doubleClicked(const QModelIndex &index)
 {
-    qDebug() << index.row();
+    // qDebug() << index.row();
 }
 
 void MainWindow::on_button_add_computer_clicked()
@@ -224,5 +224,23 @@ void MainWindow::on_dropdown_sort_by_currentIndexChanged(const QString &arg1)
 
     getAllProgrammers();
 
-    qDebug() << sort_by;
+    // qDebug() << sort_by;
+}
+
+void MainWindow::on_dropdown_computers_sort_by_currentIndexChanged(const QString &arg1)
+{
+    QString sort_by;
+
+    if(arg1 == "Name")
+        sort_by = "name";
+    if(arg1 == "Type")
+        sort_by = "type";
+    if(arg1 == "Build Year")
+        sort_by = "year_built";
+
+    // qDebug() << sort_by;
+
+    currentComputerSortColumn = sort_by;
+
+    getAllComputers();
 }
