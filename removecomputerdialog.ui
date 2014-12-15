@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>383</width>
-    <height>174</height>
+    <height>113</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,13 +16,16 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>30</y>
-     <width>291</width>
-     <height>121</height>
+     <x>10</x>
+     <y>20</y>
+     <width>361</width>
+     <height>81</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
@@ -38,6 +41,9 @@
     </item>
     <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label_remove_computer_msg">
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
       <property name="text">
        <string/>
       </property>

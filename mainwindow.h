@@ -47,7 +47,13 @@ private slots:
 
     void on_checkbox_programmer_descending_toggled(bool checked);
 
+<<<<<<< HEAD
     void on_table_computers_doubleClicked(const QModelIndex &index);
+=======
+    void on_action_new_computer_triggered();
+
+    void on_button_programmers_marry_clicked();
+>>>>>>> a7eb32cc10a92b4679d2a668d3537752447f0824
 
 private:
     void getAllProgrammers();

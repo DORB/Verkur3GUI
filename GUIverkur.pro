@@ -33,7 +33,11 @@ SOURCES += main.cpp\
     addcomputerdialog.cpp \
     removecomputerdialog.cpp \
     removeprogrammerdialog.cpp \
+<<<<<<< HEAD
     viewcomputerdialog.cpp
+=======
+    marryprogrammerdialog.cpp
+>>>>>>> a7eb32cc10a92b4679d2a668d3537752447f0824
 
 HEADERS  += mainwindow.h \
     utilities.h \
@@ -48,14 +52,22 @@ HEADERS  += mainwindow.h \
     addcomputerdialog.h \
     removecomputerdialog.h \
     removeprogrammerdialog.h \
+<<<<<<< HEAD
     viewcomputerdialog.h
+=======
+    marryprogrammerdialog.h
+>>>>>>> a7eb32cc10a92b4679d2a668d3537752447f0824
 
 FORMS    += mainwindow.ui \
     addprogrammerdialog.ui \
     addcomputerdialog.ui \
     removecomputerdialog.ui \
     removeprogrammerdialog.ui \
+<<<<<<< HEAD
     viewcomputerdialog.ui
+=======
+    marryprogrammerdialog.ui
+>>>>>>> a7eb32cc10a92b4679d2a668d3537752447f0824
 
 RESOURCES += \
     Resources.qrc
