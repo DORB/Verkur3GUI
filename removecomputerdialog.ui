@@ -41,6 +41,9 @@
     </item>
     <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label_remove_computer_msg">
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
       <property name="text">
        <string/>
       </property>

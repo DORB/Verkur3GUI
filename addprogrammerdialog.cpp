@@ -172,7 +172,7 @@ void AddProgrammerDialog::on_input_add_programmer_year_of_death_textChanged(cons
 
     QPalette *palette = new QPalette();
 
-    if(arg1.toInt() >= ui->input_add_programmers_year_of_birth->text().toInt())
+    if(arg1.toInt() >= ui->input_add_programmers_year_of_birth->text().toInt() && utils::isYear(year_of_death))
     {
         palette->setColor(QPalette::Text,Qt::black);
         ui->input_add_programmer_year_of_death->setPalette(*palette);

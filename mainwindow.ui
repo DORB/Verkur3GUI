@@ -20,6 +20,13 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Verkur 3.012456b&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QTabWidget" name="tab_choice">
@@ -409,8 +416,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_Add_new_Programmer"/>
-   <addaction name="action_add_new_computer"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_new_programmer">
@@ -426,30 +431,6 @@
   <action name="action_new_relations">
    <property name="text">
     <string>New Relations</string>
-   </property>
-  </action>
-  <action name="action_Add_new_Programmer">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/icons/Icons/programmer_icon.png</normaloff>:/icons/Icons/programmer_icon.png</iconset>
-   </property>
-   <property name="text">
-    <string>Add new Programmer</string>
-   </property>
-   <property name="toolTip">
-    <string>Add new Programmer</string>
-   </property>
-  </action>
-  <action name="action_add_new_computer">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/icons/Icons/computer_icon.png</normaloff>:/icons/Icons/computer_icon.png</iconset>
-   </property>
-   <property name="text">
-    <string>Add new Computer</string>
-   </property>
-   <property name="toolTip">
-    <string>Add new Computer</string>
    </property>
   </action>
  </widget>
