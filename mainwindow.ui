@@ -37,7 +37,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab">
          <property name="toolTip">
@@ -499,6 +499,14 @@
    </property>
    <property name="toolTip">
     <string>Add new Relation for this Computer</string>
+   </property>
+  </action>
+  <action name="action_Edit_Computer">
+   <property name="text">
+    <string>Edit Computer</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Computer</string>
    </property>
   </action>
  </widget>

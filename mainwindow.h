@@ -73,6 +73,8 @@ private slots:
 
     void on_action_new_relation_computer_triggered();
 
+    void on_action_Edit_Computer_triggered();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
