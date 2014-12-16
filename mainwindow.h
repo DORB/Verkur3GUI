@@ -67,6 +67,8 @@ private slots:
 
     void on_table_computers_clicked(const QModelIndex &index);
 
+    void on_action_new_relation_programmer_triggered();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();

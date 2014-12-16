@@ -161,6 +161,8 @@ void MainWindow::on_tab_choice_tabBarClicked(int index)
     ui->button_add_relation_programmer->setEnabled(false);
     ui->button_remove_computer->setEnabled(false);
     ui->button_remove_programmer->setEnabled(false);
+    ui->table_computers->clearSelection();
+    ui->table_programmers->clearSelection();
 }
 
 void MainWindow::on_button_add_programmer_clicked()
@@ -339,6 +341,7 @@ void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &p
 
     menu.addAction(ui->action_new_programmer);
     menu.addAction(ui->action_Delete_Programmer);
+    menu.addAction(ui->action_new_relation_programmer);
 
     menu.exec(ui->table_programmers->viewport()->mapToGlobal(pos));
 }
@@ -405,4 +408,16 @@ void MainWindow::on_table_computers_clicked(const QModelIndex &index)
 {
     ui->button_remove_computer->setEnabled(true);
     ui->button_add_relation_computer->setEnabled(true);
+}
+
+void MainWindow::on_action_new_relation_programmer_triggered()
+{
+    int index = ui->table_programmers->currentIndex().row();
+    Person programmerMarrying = currentlyDisplayedProgrammers[index];
+
+    qDebug() << QString::fromStdString(programmerMarrying.getFName());
+
+    AddRelationToProgrammer addRelationProgrammer;
+    addRelationProgrammer.setProgrammer(programmerMarrying);
+    addRelationProgrammer.exec();
 }
