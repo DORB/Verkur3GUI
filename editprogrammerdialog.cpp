@@ -27,6 +27,7 @@ void EditProgrammerDialog::editProgrammer(const Person& programmer)
         ui->radio_male->setChecked(true);
     else
         ui->radio_female->setChecked(true);
+    ui->Input_image_path->setText(QString::fromStdString(programmer.getImagePath()));
 }
 
 void EditProgrammerDialog::on_button_edit_programmer_clicked()
