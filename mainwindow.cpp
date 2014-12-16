@@ -9,6 +9,7 @@
 #include "marryprogrammerdialog.h"
 #include "viewprogrammerdialog.h"
 #include "addrelationtoprogrammer.h"
+#include "addrelationtocomputer.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -395,7 +396,19 @@ void MainWindow::on_button_add_relation_programmer_clicked()
 
     qDebug() << QString::fromStdString(programmerMarrying.getFName());
 
-    AddRelationToProgrammer addRelation;
-    addRelation.setProgrammer(programmerMarrying);
-    addRelation.exec();
+    AddRelationToProgrammer addRelationToProgrammer;
+    addRelationToProgrammer.setProgrammer(programmerMarrying);
+    addRelationToProgrammer.exec();
+}
+
+void MainWindow::on_button_add_relation_computer_clicked()
+{
+    int index = ui->table_computers->currentIndex().row();
+    Computer computerMarrying = currentlyDisplayedComputers[index];
+
+    qDebug() << QString::fromStdString(computerMarrying.getName());
+
+    AddRelationToComputer addRelationToComputer;
+    addRelationToComputer.setComputer(computerMarrying);
+    addRelationToComputer.exec();
 }

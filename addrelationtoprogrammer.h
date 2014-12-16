@@ -36,7 +36,6 @@ private:
     RelationService relationService;
 
     Person currentProgrammer;
-    Computer chosenComputer;
     CompContainer currentlyDisplayedComputers;
     CompContainer currentComputers;
 };

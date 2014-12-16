@@ -37,7 +37,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab">
          <property name="toolTip">
@@ -486,7 +486,6 @@
   <tabstop>checkbox_programmer_descending</tabstop>
   <tabstop>button_add_programmer</tabstop>
   <tabstop>button_remove_programmer</tabstop>
-  <tabstop>button_programmers_marry</tabstop>
   <tabstop>table_programmers</tabstop>
   <tabstop>input_search_computers</tabstop>
   <tabstop>dropdown_computers_sort_by</tabstop>
