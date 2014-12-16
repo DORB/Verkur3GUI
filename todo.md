@@ -14,7 +14,7 @@
 
 * ~~Eyða útúr repository og service fælum þar sem við á - Þarf ekk...~~ ÓK
 * ~~Laga default buttons í öllum dialogum~~ - ÓK
-* Búa til gagnagrunn ef hann er ekki til fyrir
+* ~~Búa til gagnagrunn ef hann er ekki til fyrir~~ **BB**
 
 VÆRI TÖFF:
 * ~~Setja inn edit dialóg möguleika. Ætti ekki að vera stórmál.~~

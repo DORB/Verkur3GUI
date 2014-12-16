@@ -30,9 +30,6 @@ void AddComputerDialog::on_button_browse_computer_image_clicked()
 
 }
 
-
-
-
 void AddComputerDialog::on_button_add_new_computer_clicked()
 {
     string name = ui->input_add_computers_name->text().toStdString();
