@@ -64,7 +64,7 @@ void ViewComputerDialog::setComputer(Computer computer)
 
     bool computer_build = computer.getBuild();
 
-    if(computer_build = 1 )
+    if(computer_build == 1 )
         ui->label_computer_build->setText("Yes");
     else
         ui->label_computer_build->setText("No");

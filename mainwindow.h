@@ -51,8 +51,6 @@ private slots:
 
     void on_action_new_computer_triggered();
 
-    // void on_button_programmers_marry_clicked();
-
     void on_table_programmers_customContextMenuRequested(const QPoint &pos);
 
     void on_action_Delete_Programmer_triggered();
@@ -62,6 +60,8 @@ private slots:
     void on_action_New_Computer_triggered();
 
     void on_action_Delete_Computer_triggered();
+
+    void on_button_add_relation_programmer_clicked();
 
 private:
     void getAllProgrammers();

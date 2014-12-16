@@ -60,3 +60,16 @@ PersonContainer RelationRepository::getRelations(const Computer& computer)
 
     return results;
 }
+
+void RelationRepository::addRelations(const Person& programmer, const Computer& computer)
+{
+    QString p_ID = QString::fromStdString(utils::int2str(programmer.getID()));
+    QString c_ID = QString::fromStdString(utils::int2str(computer.getID()));
+
+    QSqlQuery query(db);
+
+    query.prepare(QString("INSERT INTO Owners (p_ID, c_ID) VALUES (%1, %2)").arg(p_ID, c_ID));
+
+    query.exec();
+    qDebug() << query.isValid();
+}
