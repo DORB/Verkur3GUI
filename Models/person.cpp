@@ -107,14 +107,14 @@ bool Person::contains(string str)
     }
 }
 
-string Person::getWholeName()
+string Person::getWholeName() const
 {
     string result = this->getFName() + " ";
     result += this->getLName();
     return result;
 }
 
-string Person::getLifespan()
+string Person::getLifespan() const
 {
     string result = "";
     int born = this->getBY();

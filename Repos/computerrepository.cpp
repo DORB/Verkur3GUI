@@ -36,7 +36,7 @@ void ComputerRepository::updateComputer(const Computer &computer)
 
     // qDebug() << query.value();
 
-    // query.exec();
+    query.exec();
 }
 
 void ComputerRepository::removeComputer(const Computer &computer)

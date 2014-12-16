@@ -436,6 +436,8 @@ void MainWindow::on_action_Edit_Programmer_triggered()
     edit.editProgrammer(editProgrammer);
     edit.exec();
 
+    getAllProgrammers();
+
 }
 
 void MainWindow::on_action_Edit_Computer_triggered()
@@ -450,4 +452,6 @@ void MainWindow::on_action_Edit_Computer_triggered()
     edit.editComputer(editComputer);
 
     edit.exec();
+
+    getAllComputers();
 }

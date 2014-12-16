@@ -21,9 +21,9 @@ public:
     string getSex() const;
     string getNationality() const;
     string toString();
-    string getWholeName();
+    string getWholeName() const;
     string getImagePath() const;
-    string getLifespan();
+    string getLifespan() const;
     bool contains(string str);
 private:
     int pid;

@@ -17,13 +17,13 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Add new Programmer</string>
+   <string>Edit Programmer</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Add new &lt;/span&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600; color:#636363;&quot;&gt;Programmer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Edit &lt;/span&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600; color:#636363;&quot;&gt;Programmer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -203,7 +203,7 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="button_add_programmer">
+      <widget class="QPushButton" name="button_edit_programmer">
        <property name="maximumSize">
         <size>
          <width>200</width>
@@ -211,12 +211,12 @@
         </size>
        </property>
        <property name="text">
-        <string>Add Programmer</string>
+        <string>Finish</string>
        </property>
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="button_cancel_add_programmer">
+      <widget class="QPushButton" name="button_cancel_edit_programmer">
        <property name="maximumSize">
         <size>
          <width>200</width>
@@ -246,8 +246,8 @@
   <tabstop>check_add_programmer_not_dead</tabstop>
   <tabstop>Input_image_path</tabstop>
   <tabstop>button_for_image</tabstop>
-  <tabstop>button_add_programmer</tabstop>
-  <tabstop>button_cancel_add_programmer</tabstop>
+  <tabstop>button_edit_programmer</tabstop>
+  <tabstop>button_cancel_edit_programmer</tabstop>
  </tabstops>
  <resources/>
  <connections/>
