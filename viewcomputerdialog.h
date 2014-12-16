@@ -5,7 +5,6 @@
 #include "computer.h"
 #include "relationservice.h"
 
-
 namespace Ui {
 class ViewComputerDialog;
 }
@@ -19,8 +18,8 @@ public:
     ~ViewComputerDialog();
 
     void setComputer(Computer computer);
-
     bool getRelations();
+
 private slots:
     void on_button_close_window_computer_clicked();
 
