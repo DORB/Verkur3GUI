@@ -10,6 +10,7 @@
 #include "viewprogrammerdialog.h"
 #include "addrelationtoprogrammer.h"
 #include "editprogrammerdialog.h"
+#include "addrelationtocomputer.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->input_search_computers->setPlaceholderText("Search computers...");
 
     ui->button_remove_programmer->setDisabled(true);
+    ui->button_remove_computer->setDisabled(true);
+    ui->button_add_relation_programmer->setDisabled(true);
+    ui->button_add_relation_computer->setDisabled(true);
 
     getAllComputers();
     getAllProgrammers();    
@@ -154,11 +158,12 @@ void MainWindow::on_input_search_computers_textChanged(const QString &arg1)
 
 void MainWindow::on_tab_choice_tabBarClicked(int index)
 {
-    switch(index)
-    {
-    case 0: displayAllProgrammers(); break;
-    case 1: displayAllComputers(); break;
-    }
+    ui->button_add_relation_computer->setEnabled(false);
+    ui->button_add_relation_programmer->setEnabled(false);
+    ui->button_remove_computer->setEnabled(false);
+    ui->button_remove_programmer->setEnabled(false);
+    ui->table_computers->clearSelection();
+    ui->table_programmers->clearSelection();
 }
 
 void MainWindow::on_button_add_programmer_clicked()
@@ -180,6 +185,7 @@ void MainWindow::on_action_new_programmer_triggered()
 void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 {
     ui->button_remove_programmer->setEnabled(true);
+    ui->button_add_relation_programmer->setEnabled(true);
     // qDebug() << index.row();
 }
 
@@ -320,27 +326,13 @@ void MainWindow::on_action_New_Computer_triggered()
     getAllComputers();
 }
 
-/*void MainWindow::on_button_programmers_marry_clicked()
-{
-    int index = ui->table_programmers->currentIndex().row();
-    Person programmerMarrying = currentlyDisplayedProgrammers[index];
-
-    MarryProgrammerDialog marryProgrammerDialog;
-
-    marryProgrammerDialog.setProgrammer(programmerMarrying);
-
-    // Veit ekki hvað er í gangi hér, en fallið að ofan virkar ekki nema
-    // ég geri qDebug á þetta hér fyrir neðan. Mjög furðulegt.
-    qDebug() << QString::fromStdString(programmerMarrying.getFName());
-
-    marryProgrammerDialog.exec();
-}*/
 void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos)
 {
     QMenu menu;
 
     menu.addAction(ui->action_New_Computer);
     menu.addAction(ui->action_Delete_Computer);
+    menu.addAction(ui->action_new_relation_computer);
 
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 }
@@ -352,6 +344,7 @@ void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &p
     menu.addAction(ui->action_new_programmer);
     menu.addAction(ui->action_Delete_Programmer);
     menu.addAction(ui->action_Edit_Programmer);
+    menu.addAction(ui->action_new_relation_programmer);
 
     menu.exec(ui->table_programmers->viewport()->mapToGlobal(pos));
 }
@@ -397,9 +390,37 @@ void MainWindow::on_button_add_relation_programmer_clicked()
 
     qDebug() << QString::fromStdString(programmerMarrying.getFName());
 
-    AddRelationToProgrammer addRelation;
-    addRelation.setProgrammer(programmerMarrying);
-    addRelation.exec();
+    AddRelationToProgrammer addRelationToProgrammer;
+    addRelationToProgrammer.setProgrammer(programmerMarrying);
+    addRelationToProgrammer.exec();
+}
+
+void MainWindow::on_button_add_relation_computer_clicked()
+{
+    int index = ui->table_computers->currentIndex().row();
+    Computer computerMarrying = currentlyDisplayedComputers[index];
+
+    qDebug() << QString::fromStdString(computerMarrying.getName());
+
+    AddRelationToComputer addRelationToComputer;
+    addRelationToComputer.setComputer(computerMarrying);
+    addRelationToComputer.exec();
+}
+
+void MainWindow::on_table_computers_clicked(const QModelIndex &index)
+{
+    ui->button_remove_computer->setEnabled(true);
+    ui->button_add_relation_computer->setEnabled(true);
+}
+
+void MainWindow::on_action_new_relation_programmer_triggered()
+{
+    on_button_add_relation_programmer_clicked();
+}
+
+void MainWindow::on_action_new_relation_computer_triggered()
+{
+    on_button_add_relation_computer_clicked();
 }
 
 void MainWindow::on_action_Edit_Programmer_triggered()

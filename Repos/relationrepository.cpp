@@ -71,5 +71,4 @@ void RelationRepository::addRelations(const Person& programmer, const Computer& 
     query.prepare(QString("INSERT INTO Owners (p_ID, c_ID) VALUES (%1, %2)").arg(p_ID, c_ID));
 
     query.exec();
-    qDebug() << query.isValid();
 }

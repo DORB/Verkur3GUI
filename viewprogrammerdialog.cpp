@@ -27,9 +27,13 @@ void ViewProgrammerDialog::setProgrammer(Person person)
     currentlyViewedPerson = person;
 
     QString name = QString::fromStdString(person.getWholeName());
+
+    ui->label_programmer_name->setText(QString("<h2>%1</h2>").arg(name));
+
     QString lifespan = QString::fromStdString(person.getLifespan());
 
-    ui->label_programmer_name->setText(QString("<h2>%1 (%2)</h2>").arg(name, lifespan));
+    ui->label_programmer_born->setText(QString("<h3>(%1)</h3>").arg(lifespan));
+
 
     QString failPic;
 
@@ -62,7 +66,7 @@ void ViewProgrammerDialog::setProgrammer(Person person)
 
     QString programmer_nationality = QString::fromStdString(person.getNationality());
 
-    ui->label_programmer_nationality->setText(programmer_nationality);
+    ui->label_programmer_nationality->setText(QString("<h3>%1</h3>").arg(programmer_nationality));
 
     QString programmer_birth_year;
 
@@ -72,21 +76,36 @@ void ViewProgrammerDialog::setProgrammer(Person person)
         programmer_birth_year = "-";
 
 
-    ui->label_programmer_born->setText(programmer_birth_year);
+    //ui->label_programmer_born->setText(programmer_birth_year);
 
 
-    QString programmer_death_year;
-    if(person.getDY() != 0)
-        programmer_death_year = QString::fromStdString(utils::int2str(person.getDY()));
+//    QString programmer_death_year;
+//    if(person.getDY() != 0)
+//        programmer_death_year = QString::fromStdString(utils::int2str(person.getDY()));
+//    else
+//        programmer_death_year = "-";
+
+//    ui->label_programmer_dead->setText(programmer_death_year);
+
+    if(person.getSex() == "M")
+    {
+        if(person.getDY() == 0 )
+            ui->label_programmer_sex->setText("Is a man");
+        else
+            ui->label_programmer_sex->setText("Was a man");
+    }
     else
-        programmer_death_year = "-";
+    {
+        if(person.getDY() == 0 )
+            ui->label_programmer_sex->setText("Is a woman");
+        else
+            ui->label_programmer_sex->setText("Was a woman");
+    }
 
-    ui->label_programmer_dead->setText(programmer_death_year);
-
-
+/*
     QString programmer_sex = QString::fromStdString(person.getSex());
 
-    ui->label_programmer_sex->setText(programmer_sex);
+    ui->label_programmer_sex->setText(programmer_sex)*/;
 
     if(getRelations())
     {

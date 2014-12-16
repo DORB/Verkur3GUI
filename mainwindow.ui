@@ -485,6 +485,22 @@
     <string>Edit Programmer</string>
    </property>
   </action>
+  <action name="action_new_relation_programmer">
+   <property name="text">
+    <string>New Relation</string>
+   </property>
+   <property name="toolTip">
+    <string>Add new Relation for this Programmer</string>
+   </property>
+  </action>
+  <action name="action_new_relation_computer">
+   <property name="text">
+    <string>New Relation</string>
+   </property>
+   <property name="toolTip">
+    <string>Add new Relation for this Computer</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
