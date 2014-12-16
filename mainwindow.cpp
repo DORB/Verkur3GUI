@@ -29,6 +29,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->input_search_computers->setPlaceholderText("Search computers...");
 
     ui->button_remove_programmer->setDisabled(true);
+    ui->button_remove_computer->setDisabled(true);
+    ui->button_add_relation_programmer->setDisabled(true);
+    ui->button_add_relation_computer->setDisabled(true);
 
     getAllComputers();
     getAllProgrammers();    
@@ -154,11 +157,10 @@ void MainWindow::on_input_search_computers_textChanged(const QString &arg1)
 
 void MainWindow::on_tab_choice_tabBarClicked(int index)
 {
-    switch(index)
-    {
-    case 0: displayAllProgrammers(); break;
-    case 1: displayAllComputers(); break;
-    }
+    ui->button_add_relation_computer->setEnabled(false);
+    ui->button_add_relation_programmer->setEnabled(false);
+    ui->button_remove_computer->setEnabled(false);
+    ui->button_remove_programmer->setEnabled(false);
 }
 
 void MainWindow::on_button_add_programmer_clicked()
@@ -180,6 +182,7 @@ void MainWindow::on_action_new_programmer_triggered()
 void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 {
     ui->button_remove_programmer->setEnabled(true);
+    ui->button_add_relation_programmer->setEnabled(true);
     // qDebug() << index.row();
 }
 
@@ -320,21 +323,6 @@ void MainWindow::on_action_New_Computer_triggered()
     getAllComputers();
 }
 
-/*void MainWindow::on_button_programmers_marry_clicked()
-{
-    int index = ui->table_programmers->currentIndex().row();
-    Person programmerMarrying = currentlyDisplayedProgrammers[index];
-
-    MarryProgrammerDialog marryProgrammerDialog;
-
-    marryProgrammerDialog.setProgrammer(programmerMarrying);
-
-    // Veit ekki hvað er í gangi hér, en fallið að ofan virkar ekki nema
-    // ég geri qDebug á þetta hér fyrir neðan. Mjög furðulegt.
-    qDebug() << QString::fromStdString(programmerMarrying.getFName());
-
-    marryProgrammerDialog.exec();
-}*/
 void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos)
 {
     QMenu menu;
@@ -411,4 +399,10 @@ void MainWindow::on_button_add_relation_computer_clicked()
     AddRelationToComputer addRelationToComputer;
     addRelationToComputer.setComputer(computerMarrying);
     addRelationToComputer.exec();
+}
+
+void MainWindow::on_table_computers_clicked(const QModelIndex &index)
+{
+    ui->button_remove_computer->setEnabled(true);
+    ui->button_add_relation_computer->setEnabled(true);
 }

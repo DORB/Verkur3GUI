@@ -65,6 +65,8 @@ private slots:
 
     void on_button_add_relation_computer_clicked();
 
+    void on_table_computers_clicked(const QModelIndex &index);
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
