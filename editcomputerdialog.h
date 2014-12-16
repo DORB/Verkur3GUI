@@ -22,10 +22,10 @@ public:
 private slots:
     void on_button_cancel_edit_computer_clicked();
     void on_button_edit_computer_clicked();
-    void on_input_add_computers_year_textChanged(const QString &arg1);
+    void on_input_edit_computers_year_textChanged(const QString &arg1);
     void on_button_browse_computer_image_clicked();
-    void on_input_add_computers_name_textChanged(const QString &arg1);
-    void on_input_add_computers_type_textChanged(const QString &arg1);
+    void on_input_edit_computers_name_textChanged(const QString &arg1);
+    void on_input_edit_computers_type_textChanged(const QString &arg1);
 private:
     Ui::EditComputerDialog *ui;
     Computer currentComputer;
