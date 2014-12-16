@@ -63,6 +63,8 @@ private slots:
 
     void on_button_add_relation_programmer_clicked();
 
+    void on_button_add_relation_computer_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
