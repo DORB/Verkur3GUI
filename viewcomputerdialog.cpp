@@ -42,7 +42,8 @@ void ViewComputerDialog::setComputer(Computer computer)
     }
     else
     {
-        QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+        // QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+        QPixmap pixmap = computerService.getComputerPic(currentlyViewedComputer);
 
         int imageLabelWidth = ui->label_image_computer->width();
 

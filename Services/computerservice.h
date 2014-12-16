@@ -17,6 +17,7 @@ public:
 
     CompContainer getAllComputers(QString sortString, const bool& desc);
 
+    QPixmap getComputerPic(const Computer &computer);
 private:
     ComputerRepository computerRepository;
 
