@@ -58,13 +58,12 @@ void EditProgrammerDialog::on_button_add_programmer_clicked()
     utils::firstCap(nationality);
 
 
-    Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
+    Person programmer = Person(currentProgrammer.getID(), first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
 
-    programmerService.addProgrammer(programmer);
+    programmerService.updateProgrammer(programmer);
 
     close();
 }
-
 
 void EditProgrammerDialog::on_button_cancel_add_programmer_clicked()
 {
@@ -93,7 +92,3 @@ void EditProgrammerDialog::validate()
     else
         ui->button_add_programmer->setEnabled(false);
 }
-
-
-
-

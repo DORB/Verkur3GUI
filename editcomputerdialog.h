@@ -19,6 +19,10 @@ public:
 
 public slots:
     void editComputer(const Computer &computer);
+private slots:
+    void on_button_add_new_computer_clicked();
+    void on_button_cancel_add_new_computer_clicked();
+
 private:
     Ui::EditComputerDialog *ui;
     Computer currentComputer;
