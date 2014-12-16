@@ -206,28 +206,6 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="button_relations_programmers">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>See the relations for this programmer.</string>
-              </property>
-              <property name="text">
-               <string>Relations</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="button_programmers_marry">
               <property name="toolTip">
                <string>Connect Programmer to a Computer</string>
@@ -398,22 +376,6 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="button_relations_computers">
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>See relations for Computer</string>
-              </property>
-              <property name="text">
-               <string>Relations</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <spacer name="horizontalSpacer_2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -442,7 +404,7 @@
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -513,6 +475,22 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tab_choice</tabstop>
+  <tabstop>input_search_programmers</tabstop>
+  <tabstop>dropdown_sort_by</tabstop>
+  <tabstop>checkbox_programmer_descending</tabstop>
+  <tabstop>button_add_programmer</tabstop>
+  <tabstop>button_remove_programmer</tabstop>
+  <tabstop>button_programmers_marry</tabstop>
+  <tabstop>table_programmers</tabstop>
+  <tabstop>input_search_computers</tabstop>
+  <tabstop>dropdown_computers_sort_by</tabstop>
+  <tabstop>table_computers</tabstop>
+  <tabstop>button_add_computer</tabstop>
+  <tabstop>checkbox_computers_descending</tabstop>
+  <tabstop>button_remove_computer</tabstop>
+ </tabstops>
  <resources>
   <include location="Resources.qrc"/>
  </resources>

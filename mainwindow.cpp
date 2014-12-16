@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->mainToolBar->setVisible(false);
+    ui->statusBar->setVisible(false);
+
     currentProgrammerSortColumn = "ID";
     currentProgrammerSortDesc = false;
     currentComputerSortColumn = "ID";
