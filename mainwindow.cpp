@@ -8,6 +8,7 @@
 #include "viewcomputerdialog.h"
 #include "marryprogrammerdialog.h"
 #include "viewprogrammerdialog.h"
+#include "addrelationtoprogrammer.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -178,7 +179,7 @@ void MainWindow::on_action_new_programmer_triggered()
 void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 {
     ui->button_remove_programmer->setEnabled(true);
-    // qDebug() << index;
+    // qDebug() << index.row();
 }
 
 void MainWindow::on_button_remove_programmer_clicked()
@@ -385,4 +386,16 @@ void MainWindow::on_action_Delete_Programmer_triggered()
     removeProgrammerDialog.exec();
 
     getAllProgrammers();
+}
+
+void MainWindow::on_button_add_relation_programmer_clicked()
+{
+    int index = ui->table_programmers->currentIndex().row();
+    Person programmerMarrying = currentlyDisplayedProgrammers[index];
+
+    qDebug() << QString::fromStdString(programmerMarrying.getFName());
+
+    AddRelationToProgrammer addRelation;
+    addRelation.setProgrammer(programmerMarrying);
+    addRelation.exec();
 }

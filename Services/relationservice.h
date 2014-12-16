@@ -10,6 +10,7 @@ public:
     RelationService();
     PersonContainer getRelations(const Computer &computer);
     CompContainer getRelations(const Person &programmer);
+    void addRelations(const Person &programmer, const Computer &computer);
 private:
     RelationRepository relationRepository;
 };
