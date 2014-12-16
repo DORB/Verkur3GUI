@@ -18,6 +18,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void disableButtons();
+    void clearSelections();
 private slots:
     void on_input_search_programmers_textChanged(const QString &arg1);
 

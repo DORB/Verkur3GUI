@@ -30,12 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->input_search_programmers->setPlaceholderText("Search programmers...");
     ui->input_search_computers->setPlaceholderText("Search computers...");
 
-    ui->button_remove_programmer->setDisabled(true);
-    ui->button_remove_computer->setDisabled(true);
-    ui->button_add_relation_programmer->setDisabled(true);
-    ui->button_add_relation_computer->setDisabled(true);
-    ui->button_view_computer->setDisabled(true);
-    ui->button_view_programmer->setDisabled(true);
+    disableButtons();
 
 
     getAllComputers();
@@ -162,20 +157,17 @@ void MainWindow::on_input_search_computers_textChanged(const QString &arg1)
 
 void MainWindow::on_tab_choice_tabBarClicked(int index)
 {
-    ui->button_add_relation_computer->setEnabled(false);
-    ui->button_add_relation_programmer->setEnabled(false);
-    ui->button_remove_computer->setEnabled(false);
-    ui->button_remove_programmer->setEnabled(false);
-    ui->button_view_computer->setEnabled(false);
-    ui->button_view_programmer->setEnabled(false);
-    ui->table_computers->clearSelection();
-    ui->table_programmers->clearSelection();
+    disableButtons();
+    clearSelections();
 }
 
 void MainWindow::on_button_add_programmer_clicked()
 {
     AddProgrammerDialog addProgrammerDialog;
     addProgrammerDialog.exec();
+
+    disableButtons();
+    clearSelections();
 
     getAllProgrammers();
 }
@@ -487,4 +479,20 @@ void MainWindow::on_button_view_computer_clicked()
 {
     QModelIndex index = ui->table_computers->currentIndex();
     on_table_computers_doubleClicked(index);
+}
+
+void MainWindow::disableButtons()
+{
+    ui->button_remove_programmer->setDisabled(true);
+    ui->button_remove_computer->setDisabled(true);
+    ui->button_add_relation_programmer->setDisabled(true);
+    ui->button_add_relation_computer->setDisabled(true);
+    ui->button_view_computer->setDisabled(true);
+    ui->button_view_programmer->setDisabled(true);
+}
+
+void MainWindow::clearSelections()
+{
+    ui->table_computers->clearSelection();
+    ui->table_programmers->clearSelection();
 }
