@@ -7,18 +7,21 @@
 
 * ~~Implementa Relations. Hvernig??~~ **BB**
 
-* Ákveða hvernig eigi að tengja **BB**
-	* Hugmynd: Velja í töflu og fyrir neðan er takki sem heitir 'Marry to...'
-		* Upp kemur díalógur með Search reit og töflu fyrir viðkomandi tilefni 
-		* Velja réttan einstakling/tölvu og gera OK.
+* ~~Ákveða hvernig eigi að tengja~~ **BB**
+	* ~~Hugmynd: Velja í töflu og fyrir neðan er takki sem heitir 'Marry to...'~~
+		* ~~Upp kemur díalógur með Search reit og töflu fyrir viðkomandi tilefni~~
+		* ~~Velja réttan einstakling/tölvu og gera OK.~~
 
-* Setja inn Tooltips allsstaðar þar sem við á! Mikilvægt!
-* Laga nöfn á öllum Díalógum
 * ~~Eyða útúr repository og service fælum þar sem við á - Þarf ekk...~~ ÓK
-* Laga tab order í öllum dialogum - VIRKAR EKKI... SKRÍTIÐ.... e-r að kíkja... ÓK
 * ~~Laga default buttons í öllum dialogum~~ - ÓK
+* Laga tab order í öllum dialogum - VIRKAR EKKI... SKRÍTIÐ.... e-r að kíkja... ÓK
 * Búa til gagnagrunn ef hann er ekki til fyrir
 
 VÆRI TÖFF:
-* Setja inn edit dialóg möguleika. Ætti ekki að vera stórmál.
+* ~~Setja inn edit dialóg möguleika. Ætti ekki að vera stórmál.~~
+
+Gera í lokin:
+* Laga nöfn á öllum Díalógum
+* Setja inn Tooltips allsstaðar þar sem við á! Mikilvægt!
+
 
