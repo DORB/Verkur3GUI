@@ -9,7 +9,7 @@ void PersonRepository::addProgrammer(const Person& programmer)
 {
     QSqlQuery query(db);
 
-    query.prepare("INSERT INTO Programmers (first_name, last_name, birth_year, death_year, sex, nationality, imagePath) VALUES(:first_name, :last_name, :birth_year, :death_year, :sex, :nationality, :imagePath)");
+    query.prepare("INSERT INTO Programmers (first_name, last_name, birth_year, death_year, sex, nationality, imagePath, pic) VALUES(:first_name, :last_name, :birth_year, :death_year, :sex, :nationality, :imagePath, :pic)");
 
     query.bindValue(":first_name", QString::fromStdString(programmer.getFName()));
     query.bindValue(":last_name", QString::fromStdString(programmer.getLName()));
@@ -18,6 +18,13 @@ void PersonRepository::addProgrammer(const Person& programmer)
     query.bindValue(":sex", QString::fromStdString(programmer.getSex()));
     query.bindValue(":nationality", QString::fromStdString(programmer.getNationality()));
     query.bindValue(":imagePath", QString::fromStdString(programmer.getImagePath()));
+
+    QFile file(QString::fromStdString(programmer.getImagePath()));
+    if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
+
+    QByteArray byteArray = file.readAll();
+
+    query.bindValue(":pic", QVariant(byteArray));
 
     query.exec();
     qDebug() << query.executedQuery();
@@ -60,7 +67,7 @@ PersonContainer PersonRepository::getAllProgrammers(QString sortString, const bo
         order = "";
 
     QSqlQuery query(db);
-    query.prepare(QString("SELECT * FROM Programmers ORDER BY %1 %2").arg(sortString, order));
+    query.prepare(QString("SELECT ID,first_name,last_name,birth_year,death_year,sex,nationality,imagePath FROM Programmers ORDER BY %1 %2").arg(sortString, order));
     query.exec();
 
     while(query.next())
@@ -80,4 +87,23 @@ PersonContainer PersonRepository::getAllProgrammers(QString sortString, const bo
     // qDebug() << results.size();
 
     return results;
+}
+
+QPixmap PersonRepository::getProgrammerPic(const Person& programmer)
+{
+    QSqlQuery query(db);
+    query.prepare(QString("SELECT pic FROM Programmers WHERE ID = %1").arg(QString::fromStdString(utils::int2str(programmer.getID()))));
+    query.exec();
+
+    // query.first();
+    QByteArray array;
+    QPixmap pixmap;
+
+    while(query.next())
+    {
+        array = query.value(0).toByteArray();
+        pixmap.loadFromData(array);
+    }
+
+    return pixmap;
 }

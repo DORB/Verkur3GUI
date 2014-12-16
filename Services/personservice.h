@@ -17,6 +17,7 @@ public:
     PersonContainer getAllProgrammers(QString sortString, const bool& desc);
 
     void updateProgrammer(const Person &programmer);
+    QPixmap getProgrammerPic(const Person &programmer);
 private:
     PersonRepository programmerRepository;
 };

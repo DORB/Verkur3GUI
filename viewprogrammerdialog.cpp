@@ -54,7 +54,8 @@ void ViewProgrammerDialog::setProgrammer(Person person)
     }
     else
     {
-        QPixmap pixmap(QString::fromStdString(person.getImagePath()));
+        // QPixmap pixmap(QString::fromStdString(person.getImagePath()));
+        QPixmap pixmap = programmerService.getProgrammerPic(currentlyViewedPerson);
 
         int imageLabelWidth = ui->label_image_programmer->width();
 

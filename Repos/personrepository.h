@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <QDebug>
+#include <QFile>
+#include <QByteArray>
+#include <QVariant>
 #include "person.h"
 
 class PersonRepository
@@ -14,6 +17,7 @@ public:
     void updateProgrammer(const Person &programmer);
     void removeProgrammer(const Person& programmer);
     PersonContainer getAllProgrammers(QString sortString, const bool& desc);
+    QPixmap getProgrammerPic(const Person &programmer);
 private:
     QSqlDatabase db;
 };

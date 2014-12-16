@@ -23,3 +23,8 @@ void PersonService::removeProgrammer(const Person& programmer)
 {
     programmerRepository.removeProgrammer(programmer);
 }
+
+QPixmap PersonService::getProgrammerPic(const Person& programmer)
+{
+    return programmerRepository.getProgrammerPic(programmer);
+}

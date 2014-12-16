@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "person.h"
 #include "relationservice.h"
+#include "personservice.h"
 
 namespace Ui {
 class ViewProgrammerDialog;
@@ -27,6 +28,7 @@ private:
     Ui::ViewProgrammerDialog *ui;
 
     RelationService relationService;
+    PersonService programmerService;
     Person currentlyViewedPerson;
     CompContainer relatedComputers;
 };
