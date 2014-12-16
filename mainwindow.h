@@ -20,6 +20,8 @@ public:
 
     void disableButtons();
     void clearSelections();
+    void clearSelectionAndDisableButtons();
+
 private slots:
     void on_input_search_programmers_textChanged(const QString &arg1);
 
