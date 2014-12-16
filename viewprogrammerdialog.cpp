@@ -90,16 +90,16 @@ void ViewProgrammerDialog::setProgrammer(Person person)
     if(person.getSex() == "M")
     {
         if(person.getDY() == 0 )
-            ui->label_programmer_sex->setText("Is a man");
+            ui->label_programmer_sex->setText("<h3>Is a man</h3>");
         else
-            ui->label_programmer_sex->setText("Was a man");
+            ui->label_programmer_sex->setText("<h3>Was a man</h3>");
     }
     else
     {
         if(person.getDY() == 0 )
-            ui->label_programmer_sex->setText("Is a woman");
+            ui->label_programmer_sex->setText("<h3>Is a woman</h3>");
         else
-            ui->label_programmer_sex->setText("Was a woman");
+            ui->label_programmer_sex->setText("<h3>Was a woman</h3>");
     }
 
 /*
