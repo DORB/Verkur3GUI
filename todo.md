@@ -14,7 +14,6 @@
 
 * ~~Eyða útúr repository og service fælum þar sem við á - Þarf ekk...~~ ÓK
 * ~~Laga default buttons í öllum dialogum~~ - ÓK
-* Laga tab order í öllum dialogum - VIRKAR EKKI... SKRÍTIÐ.... e-r að kíkja... ÓK
 * Búa til gagnagrunn ef hann er ekki til fyrir
 
 VÆRI TÖFF:
@@ -23,5 +22,6 @@ VÆRI TÖFF:
 Gera í lokin:
 * Laga nöfn á öllum Díalógum
 * Setja inn Tooltips allsstaðar þar sem við á! Mikilvægt!
+* Laga tab order í öllum dialogum - VIRKAR EKKI... SKRÍTIÐ.... e-r að kíkja... ÓK
 
 
