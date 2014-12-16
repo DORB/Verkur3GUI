@@ -56,7 +56,7 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>0</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -76,7 +76,7 @@
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_type_computer">
            <property name="text">
-            <string>Computertype</string>
+            <string/>
            </property>
           </widget>
          </item>

@@ -25,7 +25,7 @@ void ComputerRepository::updateComputer(const Computer &computer)
 {
     QSqlQuery query(db);
 
-    query.prepare("UPDATE Computers SET name = ':name' year_built = :year_built type = ':type' build = :build imagePath = ':imagePath' WHERE ID = :ID");
+    query.prepare("UPDATE Computers SET name = :name, year_built = :year_built, type = :type, build = :build, imagePath = :imagePath WHERE ID = :ID");
 
     query.bindValue(":name", QString::fromStdString(computer.getName()));
     query.bindValue(":year_built", QString::fromStdString(utils::int2str(computer.getBuildYear())));
