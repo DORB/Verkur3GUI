@@ -17,12 +17,21 @@ void ComputerRepository::addComputer(const Computer &computer)
     query.bindValue(":build", QString::fromStdString(utils::int2str(computer.getBuild())));
     query.bindValue(":imagePath", QString::fromStdString(computer.getimagePath()));
 
-    QFile file(QString::fromStdString(computer.getimagePath()));
-    if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
+    if(computer.getimagePath() != "")
+    {
+        qDebug() << QString::fromStdString(computer.getimagePath());
 
-    QByteArray byteArray = file.readAll();
+        QFile file(QString::fromStdString(computer.getimagePath()));
+        if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
 
-    query.bindValue(":pic", QVariant(byteArray));
+        QByteArray byteArray = file.readAll();
+
+        query.bindValue(":pic", QVariant(byteArray));
+    }
+    else
+    {
+        query.bindValue(":pic", QVariant());
+    }
 
     query.exec();
 
@@ -41,12 +50,21 @@ void ComputerRepository::updateComputer(const Computer &computer)
     query.bindValue(":imagePath", QString::fromStdString(computer.getimagePath()));
     query.bindValue(":ID", QString::fromStdString(utils::int2str(computer.getID())));
 
-    QFile file(QString::fromStdString(computer.getimagePath()));
-    if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
+    if(computer.getimagePath() != "")
+    {
+        qDebug() << QString::fromStdString(computer.getimagePath());
 
-    QByteArray byteArray = file.readAll();
+        QFile file(QString::fromStdString(computer.getimagePath()));
+        if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
 
-    query.bindValue(":pic", QVariant(byteArray));
+        QByteArray byteArray = file.readAll();
+
+        query.bindValue(":pic", QVariant(byteArray));
+    }
+    else
+    {
+        query.bindValue(":pic", QVariant());
+    }
 
     // qDebug() << query.value();
 

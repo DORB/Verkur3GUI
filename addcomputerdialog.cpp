@@ -35,7 +35,9 @@ void AddComputerDialog::on_button_add_new_computer_clicked()
     string name = ui->input_add_computers_name->text().toStdString();
     string type = ui->input_add_computers_type->text().toStdString();
     int year_built = ui->input_add_computers_year->text().toInt();
-    string imagePath =ui->input_computers_image_path->text().toStdString();
+    string imagePath = ui->input_computers_image_path->text().toStdString();
+
+    // qDebug() << QString::fromStdString(imagePath);
 
     bool build;
 

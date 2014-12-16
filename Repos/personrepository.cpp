@@ -19,12 +19,29 @@ void PersonRepository::addProgrammer(const Person& programmer)
     query.bindValue(":nationality", QString::fromStdString(programmer.getNationality()));
     query.bindValue(":imagePath", QString::fromStdString(programmer.getImagePath()));
 
+    if(programmer.getImagePath() != "")
+    {
+        qDebug() << QString::fromStdString(programmer.getImagePath());
+
+        QFile file(QString::fromStdString(programmer.getImagePath()));
+        if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
+
+        QByteArray byteArray = file.readAll();
+
+        query.bindValue(":pic", QVariant(byteArray));
+    }
+    else
+    {
+        query.bindValue(":pic", QVariant());
+    }
+    /*
     QFile file(QString::fromStdString(programmer.getImagePath()));
     if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
 
     QByteArray byteArray = file.readAll();
 
     query.bindValue(":pic", QVariant(byteArray));
+    */
 
     query.exec();
     qDebug() << query.executedQuery();
@@ -45,12 +62,29 @@ void PersonRepository::updateProgrammer(const Person& programmer)
     query.bindValue(":imagePath", QString::fromStdString(programmer.getImagePath()));
     query.bindValue(":ID", QString::fromStdString(utils::int2str(programmer.getID())));
 
+    if(programmer.getImagePath() != "")
+    {
+        qDebug() << QString::fromStdString(programmer.getImagePath());
+
+        QFile file(QString::fromStdString(programmer.getImagePath()));
+        if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
+
+        QByteArray byteArray = file.readAll();
+
+        query.bindValue(":pic", QVariant(byteArray));
+    }
+    else
+    {
+        query.bindValue(":pic", QVariant());
+    }
+    /*
     QFile file(QString::fromStdString(programmer.getImagePath()));
     if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
 
     QByteArray byteArray = file.readAll();
 
     query.bindValue(":pic", QVariant(byteArray));
+    */
 
     query.exec();
 }
