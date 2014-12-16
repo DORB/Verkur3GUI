@@ -477,6 +477,14 @@
     <string>Delete Programmer</string>
    </property>
   </action>
+  <action name="action_Edit_Programmer">
+   <property name="text">
+    <string>Edit Programmer</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Programmer</string>
+   </property>
+  </action>
   <action name="action_new_relation_programmer">
    <property name="text">
     <string>New Relation</string>

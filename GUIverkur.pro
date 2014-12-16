@@ -38,6 +38,7 @@ SOURCES += main.cpp\
     Repos/relationrepository.cpp \
     Services/relationservice.cpp \
     addrelationtoprogrammer.cpp \
+    editprogrammerdialog.cpp \
     addrelationtocomputer.cpp
 
 HEADERS  += mainwindow.h \
@@ -58,6 +59,7 @@ HEADERS  += mainwindow.h \
     Repos/relationrepository.h \
     Services/relationservice.h \
     addrelationtoprogrammer.h \
+    editprogrammerdialog.h \
     addrelationtocomputer.h
 
 FORMS    += mainwindow.ui \
@@ -68,6 +70,7 @@ FORMS    += mainwindow.ui \
     viewcomputerdialog.ui \
     viewprogrammerdialog.ui \
     addrelationtoprogrammer.ui \
+    editprogrammerdialog.ui \
     addrelationtocomputer.ui
 
 RESOURCES += \
