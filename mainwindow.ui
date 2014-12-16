@@ -477,6 +477,14 @@
     <string>Delete Programmer</string>
    </property>
   </action>
+  <action name="action_Edit_Programmer">
+   <property name="text">
+    <string>Edit Programmer</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Programmer</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
@@ -486,7 +494,6 @@
   <tabstop>checkbox_programmer_descending</tabstop>
   <tabstop>button_add_programmer</tabstop>
   <tabstop>button_remove_programmer</tabstop>
-  <tabstop>button_programmers_marry</tabstop>
   <tabstop>table_programmers</tabstop>
   <tabstop>input_search_computers</tabstop>
   <tabstop>dropdown_computers_sort_by</tabstop>

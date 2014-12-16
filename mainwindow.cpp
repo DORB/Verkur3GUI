@@ -9,6 +9,7 @@
 #include "marryprogrammerdialog.h"
 #include "viewprogrammerdialog.h"
 #include "addrelationtoprogrammer.h"
+#include "editprogrammerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -350,6 +351,7 @@ void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &p
 
     menu.addAction(ui->action_new_programmer);
     menu.addAction(ui->action_Delete_Programmer);
+    menu.addAction(ui->action_Edit_Programmer);
 
     menu.exec(ui->table_programmers->viewport()->mapToGlobal(pos));
 }
@@ -398,4 +400,17 @@ void MainWindow::on_button_add_relation_programmer_clicked()
     AddRelationToProgrammer addRelation;
     addRelation.setProgrammer(programmerMarrying);
     addRelation.exec();
+}
+
+void MainWindow::on_action_Edit_Programmer_triggered()
+{
+    int index = ui->table_programmers->currentIndex().row();
+    Person editProgrammer = currentlyDisplayedProgrammers[index];
+
+    qDebug() << QString::fromStdString(editProgrammer.getFName());
+
+    EditProgrammerDialog edit;
+    edit.editProgrammer(editProgrammer);
+    edit.exec();
+
 }
