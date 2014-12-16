@@ -23,7 +23,8 @@ void ViewComputerDialog::setComputer(Computer computer)
 
     QString name = QString::fromStdString(computer.getName());
     QString type = QString::fromStdString(computer.getType());
-    ui->label_title_computer->setText(QString("<h2>%1, (%2)</h2>").arg(name, type));
+    ui->label_title_computer->setText(QString("<h1>%1</h1>").arg(name));
+    ui->label_type_computer->setText(QString("<h2>(%2)</h2>").arg(type));
 
     QString failPic;
 
@@ -56,13 +57,13 @@ void ViewComputerDialog::setComputer(Computer computer)
     if(computer_build == true)
     {
         QString computer_build_year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
-        QString comp_build_year = QString("<h3>Was built in %1.</h3>").arg(computer_build_year);
+        QString comp_build_year = QString("<h3><center>Was built in %1</center></h3>").arg(computer_build_year);
         ui->label_computer_built_year->setText(comp_build_year);
     }
     else
     {
         QString computer_build_year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
-        QString comp_build_year = QString("<h3>Was worked on in %1, but was not built.</h3>").arg(computer_build_year);
+        QString comp_build_year = QString("<h3><center>Was worked on in %1, but was not built</center></h3>").arg(computer_build_year);
         ui->label_computer_built_year->setText(comp_build_year);
     }
     if(getRelations())
@@ -71,7 +72,9 @@ void ViewComputerDialog::setComputer(Computer computer)
 
         for(unsigned int i = 0; i < relatedProgrammers.size(); i++)
         {
-            ui->list_computer_relations->addItem(QString::fromStdString(relatedProgrammers[i].getWholeName()));
+            string item_str = relatedProgrammers[i].getWholeName() + " (";
+            item_str += relatedProgrammers[i].getLifespan() + ")";
+            ui->list_computer_relations->addItem(QString::fromStdString(item_str));
         }
     }
     else
