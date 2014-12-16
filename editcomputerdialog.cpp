@@ -29,3 +29,13 @@ void EditComputerDialog::editComputer(const Computer& computer)
     else
         ui->check_box_computer_built->setChecked(false);
 }
+
+void EditComputerDialog::on_button_cancel_add_new_computer_clicked()
+{
+    close();
+}
+
+void EditComputerDialog::on_button_add_new_computer_clicked()
+{
+
+}

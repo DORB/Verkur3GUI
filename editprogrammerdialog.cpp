@@ -66,7 +66,6 @@ void EditProgrammerDialog::on_button_edit_programmer_clicked()
     close();
 }
 
-
 void EditProgrammerDialog::on_button_cancel_edit_programmer_clicked()
 {
     close();
@@ -94,7 +93,3 @@ void EditProgrammerDialog::validate()
     else
         ui->button_edit_programmer->setEnabled(false);
 }
-
-
-
-
