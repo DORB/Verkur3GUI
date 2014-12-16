@@ -215,7 +215,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Edit Programmer</string>
+        <string>Finish</string>
        </property>
       </widget>
      </item>

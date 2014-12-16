@@ -186,6 +186,7 @@ void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
     ui->button_remove_programmer->setEnabled(true);
     ui->button_add_relation_programmer->setEnabled(true);
     ui->button_view_programmer->setEnabled(true);
+    ui->button_programmer_edit->setEnabled(true);
 }
 
 void MainWindow::on_button_remove_programmer_clicked()
@@ -436,6 +437,7 @@ void MainWindow::on_table_computers_clicked(const QModelIndex &index)
     ui->button_remove_computer->setEnabled(true);
     ui->button_add_relation_computer->setEnabled(true);
     ui->button_view_computer->setEnabled(true);
+    ui->button_edit_computer->setEnabled(true);
 }
 
 void MainWindow::on_action_new_relation_programmer_triggered()
@@ -515,6 +517,8 @@ void MainWindow::disableButtons()
     ui->button_add_relation_computer->setDisabled(true);
     ui->button_view_computer->setDisabled(true);
     ui->button_view_programmer->setDisabled(true);
+    ui->button_programmer_edit->setDisabled(true);
+    ui->button_edit_computer->setDisabled(true);
 }
 
 void MainWindow::clearSelections()
@@ -525,12 +529,16 @@ void MainWindow::clearSelections()
 
 void MainWindow::clearSelectionAndDisableButtons()
 {
-    ui->button_remove_programmer->setDisabled(true);
-    ui->button_remove_computer->setDisabled(true);
-    ui->button_add_relation_programmer->setDisabled(true);
-    ui->button_add_relation_computer->setDisabled(true);
-    ui->button_view_computer->setDisabled(true);
-    ui->button_view_programmer->setDisabled(true);
-    ui->table_computers->clearSelection();
-    ui->table_programmers->clearSelection();
+    disableButtons();
+    clearSelections();
+}
+
+void MainWindow::on_button_programmer_edit_clicked()
+{
+    on_action_Edit_Programmer_triggered();
+}
+
+void MainWindow::on_button_edit_computer_clicked()
+{
+    on_action_Edit_Computer_triggered();
 }

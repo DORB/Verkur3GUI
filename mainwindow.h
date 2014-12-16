@@ -87,6 +87,10 @@ private slots:
 
     void on_button_view_computer_clicked();
 
+    void on_button_programmer_edit_clicked();
+
+    void on_button_edit_computer_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
