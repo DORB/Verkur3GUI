@@ -22,8 +22,8 @@ void ViewComputerDialog::setComputer(Computer computer)
     currentlyViewedComputer = computer;
 
     QString name = QString::fromStdString(computer.getName());
-    QString year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
-    ui->label_title_computer->setText(QString("<h2>%1, %2</h2>").arg(name, year));
+    QString type = QString::fromStdString(computer.getType());
+    ui->label_title_computer->setText(QString("<h2>%1, (%2)</h2>").arg(name, type));
 
     QString failPic;
 
@@ -51,24 +51,20 @@ void ViewComputerDialog::setComputer(Computer computer)
     }
 
 
-
-    QString computer_type = QString::fromStdString(computer.getType());
-
-    ui->label_computer_type->setText(computer_type);
-
-
-    QString computer_build_year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
-
-    ui->label_computer_year_built->setText(computer_build_year);
-
-
     bool computer_build = computer.getBuild();
 
-    if(computer_build = 1 )
-        ui->label_computer_build->setText("Yes");
+    if(computer_build == true)
+    {
+        QString computer_build_year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
+        QString comp_build_year = QString("<h3>Was built in %1.</h3>").arg(computer_build_year);
+        ui->label_computer_built_year->setText(comp_build_year);
+    }
     else
-        ui->label_computer_build->setText("No");
-
+    {
+        QString computer_build_year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
+        QString comp_build_year = QString("<h3>Was worked on in %1, but was not built.</h3>").arg(computer_build_year);
+        ui->label_computer_built_year->setText(comp_build_year);
+    }
     if(getRelations())
     {
         ui->list_computer_relations->clear();
