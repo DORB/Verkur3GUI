@@ -41,7 +41,10 @@ void ComputerRepository::updateComputer(const Computer &computer)
 {
     QSqlQuery query(db);
 
-    query.prepare("UPDATE Computers SET name = :name, year_built = :year_built, type = :type, build = :build, imagePath = :imagePath, pic = :pic WHERE ID = :ID");
+    if(computer.getimagePath() != "")
+        query.prepare("UPDATE Computers SET name = :name, year_built = :year_built, type = :type, build = :build, imagePath = :imagePath, pic = :pic WHERE ID = :ID");
+    else
+        query.prepare("UPDATE Computers SET name = :name, year_built = :year_built, type = :type, build = :build WHERE ID = :ID");
 
     query.bindValue(":name", QString::fromStdString(computer.getName()));
     query.bindValue(":year_built", QString::fromStdString(utils::int2str(computer.getBuildYear())));
@@ -61,12 +64,6 @@ void ComputerRepository::updateComputer(const Computer &computer)
 
         query.bindValue(":pic", QVariant(byteArray));
     }
-    else
-    {
-        query.bindValue(":pic", QVariant());
-    }
-
-    // qDebug() << query.value();
 
     query.exec();
 }

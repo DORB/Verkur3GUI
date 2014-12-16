@@ -51,7 +51,11 @@ void PersonRepository::updateProgrammer(const Person& programmer)
 {
     QSqlQuery query(db);
 
-    query.prepare("UPDATE Programmers SET first_name = :first_name, last_name = :last_name, birth_year = :birth_year, death_year = :death_year, sex = :sex, nationality = :nationality, imagePath = :imagePath, pic = :pic WHERE ID = :ID");
+    if(programmer.getImagePath() != "")
+        query.prepare("UPDATE Programmers SET first_name = :first_name, last_name = :last_name, birth_year = :birth_year, death_year = :death_year, sex = :sex, nationality = :nationality, imagePath = :imagePath, pic = :pic WHERE ID = :ID");
+    else
+        query.prepare("UPDATE Programmers SET first_name = :first_name, last_name = :last_name, birth_year = :birth_year, death_year = :death_year, sex = :sex, nationality = :nationality WHERE ID = :ID");
+
 
     query.bindValue(":first_name", QString::fromStdString(programmer.getFName()));
     query.bindValue(":last_name", QString::fromStdString(programmer.getLName()));
@@ -73,18 +77,6 @@ void PersonRepository::updateProgrammer(const Person& programmer)
 
         query.bindValue(":pic", QVariant(byteArray));
     }
-    else
-    {
-        query.bindValue(":pic", QVariant());
-    }
-    /*
-    QFile file(QString::fromStdString(programmer.getImagePath()));
-    if(!file.open(QIODevice::ReadOnly)) { qDebug() << "virkar ekki"; return; }
-
-    QByteArray byteArray = file.readAll();
-
-    query.bindValue(":pic", QVariant(byteArray));
-    */
 
     query.exec();
 }

@@ -36,7 +36,7 @@ void EditComputerDialog::editComputer(const Computer& computer)
     ui->input_edit_computers_name->setText(QString::fromStdString(computer.getName()));
     ui->input_edit_computers_year->setText(QString::fromStdString(utils::int2str(computer.getBuildYear())));
     ui->input_edit_computers_type->setText(QString::fromStdString(computer.getType()));
-    ui->input_computers_image_path->setText(QString::fromStdString(computer.getimagePath()));
+    ui->input_computers_image_path->clear();
 
     bool wasBuilt = computer.getBuild();
 
