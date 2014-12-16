@@ -135,6 +135,9 @@
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
+            <property name="dragEnabled">
+             <bool>true</bool>
+            </property>
             <property name="alternatingRowColors">
              <bool>true</bool>
             </property>
@@ -436,7 +439,6 @@
     </property>
     <addaction name="action_new_programmer"/>
     <addaction name="action_new_computer"/>
-    <addaction name="action_new_relations"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>

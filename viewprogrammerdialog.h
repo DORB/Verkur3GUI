@@ -19,7 +19,7 @@ public:
     void setProgrammer(Person person);
 
 private slots:
-    void on_pushButton_clicked();
+    void on_button_view_programmer_close_clicked();
 
 private:
     Ui::ViewProgrammerDialog *ui;

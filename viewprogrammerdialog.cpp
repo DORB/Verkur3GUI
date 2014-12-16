@@ -17,7 +17,7 @@ ViewProgrammerDialog::~ViewProgrammerDialog()
     delete ui;
 }
 
-void ViewProgrammerDialog::on_pushButton_clicked()
+void ViewProgrammerDialog::on_button_view_programmer_close_clicked()
 {
     close();
 }
