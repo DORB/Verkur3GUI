@@ -83,6 +83,10 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>button_remove_computer_cancel</tabstop>
+  <tabstop>button_remove_computer_ok</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

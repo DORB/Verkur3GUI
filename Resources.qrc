@@ -2,6 +2,8 @@
     <qresource prefix="/icons">
         <file>Icons/computer_icon.png</file>
         <file>Icons/programmer_icon.png</file>
+        <file>Icons/40165.png</file>
+        <file>Icons/addprogrammer.png</file>
     </qresource>
     <qresource prefix="/pics">
         <file>Images/man.png</file>

@@ -236,9 +236,15 @@
   <tabstop>input_add_programmers_first_name</tabstop>
   <tabstop>input_add_programmers_last_name</tabstop>
   <tabstop>input_add_programmers_nationality</tabstop>
+  <tabstop>radio_male</tabstop>
+  <tabstop>radio_female</tabstop>
   <tabstop>input_add_programmers_year_of_birth</tabstop>
   <tabstop>input_add_programmer_year_of_death</tabstop>
   <tabstop>check_add_programmer_not_dead</tabstop>
+  <tabstop>Input_image_path</tabstop>
+  <tabstop>button_for_image</tabstop>
+  <tabstop>button_add_programmer</tabstop>
+  <tabstop>button_cancel_add_programmer</tabstop>
  </tabstops>
  <resources/>
  <connections/>

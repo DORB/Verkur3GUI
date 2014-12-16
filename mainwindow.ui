@@ -499,6 +499,24 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tab_choice</tabstop>
+  <tabstop>input_search_programmers</tabstop>
+  <tabstop>dropdown_sort_by</tabstop>
+  <tabstop>checkbox_programmer_descending</tabstop>
+  <tabstop>button_add_programmer</tabstop>
+  <tabstop>button_remove_programmer</tabstop>
+  <tabstop>button_relations_programmers</tabstop>
+  <tabstop>button_programmers_marry</tabstop>
+  <tabstop>table_programmers</tabstop>
+  <tabstop>input_search_computers</tabstop>
+  <tabstop>dropdown_computers_sort_by</tabstop>
+  <tabstop>table_computers</tabstop>
+  <tabstop>button_add_computer</tabstop>
+  <tabstop>checkbox_computers_descending</tabstop>
+  <tabstop>button_remove_computer</tabstop>
+  <tabstop>button_relations_computers</tabstop>
+ </tabstops>
  <resources>
   <include location="Resources.qrc"/>
  </resources>

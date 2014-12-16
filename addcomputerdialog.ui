@@ -118,6 +118,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>input_add_computers_name</tabstop>
+  <tabstop>input_add_computers_type</tabstop>
+  <tabstop>input_add_computers_year</tabstop>
+  <tabstop>check_box_computer_built</tabstop>
+  <tabstop>input_computers_image_path</tabstop>
+  <tabstop>button_browse_computer_image</tabstop>
+  <tabstop>button_add_new_computer</tabstop>
+  <tabstop>button_cancel_add_new_computer</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
