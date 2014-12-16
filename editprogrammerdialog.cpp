@@ -29,7 +29,7 @@ void EditProgrammerDialog::editProgrammer(const Person& programmer)
         ui->radio_female->setChecked(true);
 }
 
-void EditProgrammerDialog::on_button_add_programmer_clicked()
+void EditProgrammerDialog::on_button_edit_programmer_clicked()
 {
     string first_name = ui->input_add_programmers_first_name->text().toStdString();
     string last_name = ui->input_add_programmers_last_name->text().toStdString();
@@ -57,16 +57,17 @@ void EditProgrammerDialog::on_button_add_programmer_clicked()
     utils::trimWS(nationality);
     utils::firstCap(nationality);
 
+    qDebug() << "Kemst hingað";
 
-    Person programmer = Person(0, first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
+    Person editedProgrammer = Person(currentProgrammer.getID(), first_name, last_name, year_of_birth, year_of_death, sex, nationality, imagePath);
 
-    programmerService.addProgrammer(programmer);
+    programmerService.updateProgrammer(editedProgrammer);
 
     close();
 }
 
 
-void EditProgrammerDialog::on_button_cancel_add_programmer_clicked()
+void EditProgrammerDialog::on_button_cancel_edit_programmer_clicked()
 {
     close();
 }
@@ -89,9 +90,9 @@ void EditProgrammerDialog::validate()
         valid = false;
 
     if(valid)
-        ui->button_add_programmer->setEnabled(true);
+        ui->button_edit_programmer->setEnabled(true);
     else
-        ui->button_add_programmer->setEnabled(false);
+        ui->button_edit_programmer->setEnabled(false);
 }
 
 

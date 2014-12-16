@@ -17,12 +17,15 @@ public:
     explicit EditProgrammerDialog(QWidget *parent = 0);
     ~EditProgrammerDialog();
 
-    void on_button_cancel_add_programmer_clicked();
-    void on_button_add_programmer_clicked();
-public slots:
     void editProgrammer(const Person &programmer);
+
+private slots:
+    void on_button_cancel_edit_programmer_clicked();
+    void on_button_edit_programmer_clicked();
+
 private:
     Ui::EditProgrammerDialog *ui;
+
     Person currentProgrammer;
     PersonService programmerService;
 
