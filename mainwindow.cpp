@@ -331,6 +331,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 
     menu.addAction(ui->action_New_Computer);
     menu.addAction(ui->action_Delete_Computer);
+    menu.addAction(ui->action_new_relation_computer);
 
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 }
@@ -412,12 +413,10 @@ void MainWindow::on_table_computers_clicked(const QModelIndex &index)
 
 void MainWindow::on_action_new_relation_programmer_triggered()
 {
-    int index = ui->table_programmers->currentIndex().row();
-    Person programmerMarrying = currentlyDisplayedProgrammers[index];
+    on_button_add_relation_programmer_clicked();
+}
 
-    qDebug() << QString::fromStdString(programmerMarrying.getFName());
-
-    AddRelationToProgrammer addRelationProgrammer;
-    addRelationProgrammer.setProgrammer(programmerMarrying);
-    addRelationProgrammer.exec();
+void MainWindow::on_action_new_relation_computer_triggered()
+{
+    on_button_add_relation_computer_clicked();
 }

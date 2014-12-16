@@ -69,6 +69,8 @@ private slots:
 
     void on_action_new_relation_programmer_triggered();
 
+    void on_action_new_relation_computer_triggered();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
