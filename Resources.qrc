@@ -6,5 +6,6 @@
     <qresource prefix="/pics">
         <file>Images/man.png</file>
         <file>Images/woman.png</file>
+        <file>Images/computer_unknown.png</file>
     </qresource>
 </RCC>

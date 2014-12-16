@@ -25,14 +25,31 @@ void ViewComputerDialog::setComputer(Computer computer)
     QString year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
     ui->label_title_computer->setText(QString("<h2>%1, %2</h2>").arg(name, year));
 
+    QString failPic;
 
-    QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+    failPic = ":/pics/Images/computer_unknown.png";
 
-    int imageLabelWidth = ui->label_image_computer->width();
+    if(computer.getimagePath() == "")
+    {
+        QPixmap pixmap(failPic);
 
-    QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+        int imageLabelWidth = ui->label_image_computer->width();
 
-    ui->label_image_computer->setPixmap(scaledPixMap);
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_computer->setPixmap(scaledPixMap);
+    }
+    else
+    {
+        QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+
+        int imageLabelWidth = ui->label_image_computer->width();
+
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_computer->setPixmap(scaledPixMap);
+    }
+
 
 
     QString computer_type = QString::fromStdString(computer.getType());
