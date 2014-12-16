@@ -89,7 +89,7 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="button_add_new_computer">
+      <widget class="QPushButton" name="button_edit_computer">
        <property name="maximumSize">
         <size>
          <width>150</width>
@@ -97,12 +97,12 @@
         </size>
        </property>
        <property name="text">
-        <string>Add new computer</string>
+        <string>Edit Computer</string>
        </property>
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="button_cancel_add_new_computer">
+      <widget class="QPushButton" name="button_cancel_edit_computer">
        <property name="maximumSize">
         <size>
          <width>150</width>
@@ -128,10 +128,9 @@
   <tabstop>check_box_computer_built</tabstop>
   <tabstop>input_computers_image_path</tabstop>
   <tabstop>button_browse_computer_image</tabstop>
-  <tabstop>button_add_new_computer</tabstop>
-  <tabstop>button_cancel_add_new_computer</tabstop>
+  <tabstop>button_edit_computer</tabstop>
+  <tabstop>button_cancel_edit_computer</tabstop>
  </tabstops>
  <resources/>
  <connections/>
 </ui>
-
