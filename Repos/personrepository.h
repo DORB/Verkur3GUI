@@ -5,8 +5,6 @@
 #include <QDebug>
 #include "person.h"
 
-typedef vector<Person> PersonContainer;
-
 class PersonRepository
 {
 public:

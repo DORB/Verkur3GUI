@@ -36,4 +36,6 @@ private:
     string imagePath;
 };
 
+typedef vector<Person> PersonContainer;
+
 #endif // PERSON_H

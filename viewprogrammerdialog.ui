@@ -53,7 +53,7 @@
        <item>
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Bio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bio:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -98,7 +98,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Dead</string>
+            <string>Dead:</string>
            </property>
           </widget>
          </item>
@@ -146,10 +146,19 @@
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="QPushButton" name="pushButton">
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QPushButton" name="button_view_programmer_close">
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="text">
       <string>Close Window</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

@@ -29,4 +29,6 @@ private:
     string imagePath;
 };
 
+typedef vector<Computer> CompContainer;
+
 #endif // COMPUTER_H
