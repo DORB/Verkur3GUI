@@ -31,7 +31,7 @@
       <item>
        <widget class="QTabWidget" name="tab_choice">
         <property name="toolTip">
-         <string>Double-click to view Computer</string>
+         <string/>
         </property>
         <property name="tabShape">
          <enum>QTabWidget::Rounded</enum>
@@ -40,6 +40,9 @@
          <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
+         <property name="toolTip">
+          <string/>
+         </property>
          <attribute name="title">
           <string>Programmers</string>
          </attribute>
@@ -78,6 +81,9 @@
             </item>
             <item>
              <widget class="QComboBox" name="dropdown_sort_by">
+              <property name="toolTip">
+               <string>What Order Would you like to sort the table</string>
+              </property>
               <item>
                <property name="text">
                 <string>Inserted Order</string>
@@ -262,6 +268,9 @@
             </item>
             <item>
              <widget class="QComboBox" name="dropdown_computers_sort_by">
+              <property name="toolTip">
+               <string>What Order Would you like to sort the table</string>
+              </property>
               <item>
                <property name="text">
                 <string>Inserted Order</string>
@@ -300,6 +309,9 @@
            <widget class="QTableWidget" name="table_computers">
             <property name="contextMenuPolicy">
              <enum>Qt::CustomContextMenu</enum>
+            </property>
+            <property name="toolTip">
+             <string>Double-click to view Computer</string>
             </property>
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
