@@ -17,13 +17,15 @@ ViewProgrammerDialog::~ViewProgrammerDialog()
     delete ui;
 }
 
-void ViewProgrammerDialog::on_pushButton_clicked()
+void ViewProgrammerDialog::on_button_view_programmer_close_clicked()
 {
     close();
 }
 
 void ViewProgrammerDialog::setProgrammer(Person person)
 {
+    currentlyViewedPerson = person;
+
     QString name = QString::fromStdString(person.getWholeName());
     QString lifespan = QString::fromStdString(person.getLifespan());
 
@@ -86,6 +88,32 @@ void ViewProgrammerDialog::setProgrammer(Person person)
 
     ui->label_programmer_sex->setText(programmer_sex);
 
+    if(getRelations())
+    {
+        ui->list_programmer_relations->clear();
 
+        for(unsigned int i = 0; i < relatedComputers.size(); i++)
+        {
+            string item_str = relatedComputers[i].getName() + " (";
+            item_str += utils::int2str(relatedComputers[i].getBuildYear()) + ")";
+            ui->list_programmer_relations->addItem(QString::fromStdString(item_str));
+        }
+    }
+    else
+    {
+        ui->label_programmer_relations->hide();
+        ui->list_programmer_relations->hide();
+    }
+}
 
+bool ViewProgrammerDialog::getRelations()
+{
+    qDebug() << QString::fromStdString(currentlyViewedPerson.getWholeName());
+
+    relatedComputers = relationService.getRelations(currentlyViewedPerson);
+
+    if(relatedComputers.size() > 0)
+        return true;
+    else
+        return false;
 }

@@ -19,18 +19,37 @@ ViewComputerDialog::~ViewComputerDialog()
 
 void ViewComputerDialog::setComputer(Computer computer)
 {
+    currentlyViewedComputer = computer;
+
     QString name = QString::fromStdString(computer.getName());
     QString year = QString::fromStdString(utils::int2str(computer.getBuildYear()));
     ui->label_title_computer->setText(QString("<h2>%1, %2</h2>").arg(name, year));
 
+    QString failPic;
 
-    QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+    failPic = ":/pics/Images/computer_unknown.png";
 
-    int imageLabelWidth = ui->label_image_computer->width();
+    if(computer.getimagePath() == "")
+    {
+        QPixmap pixmap(failPic);
 
-    QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+        int imageLabelWidth = ui->label_image_computer->width();
 
-    ui->label_image_computer->setPixmap(scaledPixMap);
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_computer->setPixmap(scaledPixMap);
+    }
+    else
+    {
+        QPixmap pixmap(QString::fromStdString(computer.getimagePath()));
+
+        int imageLabelWidth = ui->label_image_computer->width();
+
+        QPixmap scaledPixMap = pixmap.scaledToWidth(imageLabelWidth);
+
+        ui->label_image_computer->setPixmap(scaledPixMap);
+    }
+
 
 
     QString computer_type = QString::fromStdString(computer.getType());
@@ -49,9 +68,36 @@ void ViewComputerDialog::setComputer(Computer computer)
         ui->label_computer_build->setText("Yes");
     else
         ui->label_computer_build->setText("No");
+
+    if(getRelations())
+    {
+        ui->list_computer_relations->clear();
+
+        for(unsigned int i = 0; i < relatedProgrammers.size(); i++)
+        {
+            ui->list_computer_relations->addItem(QString::fromStdString(relatedProgrammers[i].getWholeName()));
+        }
+    }
+    else
+    {
+        ui->label_relations_for_computer->hide();
+        ui->list_computer_relations->hide();
+    }
 }
 
 void ViewComputerDialog::on_button_close_window_computer_clicked()
 {
     close();
+}
+
+bool ViewComputerDialog::getRelations()
+{
+    qDebug() << QString::fromStdString(currentlyViewedComputer.getName());
+
+    relatedProgrammers = relationService.getRelations(currentlyViewedComputer);
+
+    if(relatedProgrammers.size() > 0)
+        return true;
+    else
+        return false;
 }

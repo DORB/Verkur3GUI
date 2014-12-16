@@ -5,8 +5,6 @@
 #include <QDebug>
 #include "computer.h"
 
-typedef vector<Computer> CompContainer;
-
 class ComputerRepository
 {
 public:

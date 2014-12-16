@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "person.h"
+#include "relationservice.h"
 
 namespace Ui {
 class ViewProgrammerDialog;
@@ -17,12 +18,17 @@ public:
     ~ViewProgrammerDialog();
 
     void setProgrammer(Person person);
+    bool getRelations();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_button_view_programmer_close_clicked();
 
 private:
     Ui::ViewProgrammerDialog *ui;
+
+    RelationService relationService;
+    Person currentlyViewedPerson;
+    CompContainer relatedComputers;
 };
 
 #endif // VIEWPROGRAMMERDIALOG_H
