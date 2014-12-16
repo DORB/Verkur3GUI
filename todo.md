@@ -20,6 +20,7 @@
 * Eyða útúr repository og service fælum þar sem við á
 * Laga tab order í öllum dialogum
 * Laga default buttons í öllum dialogum
+* Búa til gagnagrunn ef hann er ekki til fyrir
 
 VÆRI TÖFF:
 * Setja inn edit dialóg möguleika. Ætti ekki að vera stórmál.
