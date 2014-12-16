@@ -28,11 +28,11 @@ void ViewProgrammerDialog::setProgrammer(Person person)
 
     QString name = QString::fromStdString(person.getWholeName());
 
-    ui->label_programmer_name->setText(QString("<h2>%1</h2>").arg(name));
+    ui->label_programmer_name->setText(QString("<h1>%1</h1>").arg(name));
 
     QString lifespan = QString::fromStdString(person.getLifespan());
 
-    ui->label_programmer_born->setText(QString("<h3>(%1)</h3>").arg(lifespan));
+    ui->label_programmer_born->setText(QString("<h2>(%1)</h2>").arg(lifespan));
 
 
     QString failPic;
