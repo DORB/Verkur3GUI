@@ -17,9 +17,6 @@
 * ~~Eyða útúr repository og service fælum þar sem við á - Þarf ekk...~~ ÓK
 * Laga tab order í öllum dialogum - VIRKAR EKKI... SKRÍTIÐ.... e-r að kíkja... ÓK
 * ~~Laga default buttons í öllum dialogum~~ - ÓK
-* Eyða útúr repository og service fælum þar sem við á
-* Laga tab order í öllum dialogum
-* Laga default buttons í öllum dialogum
 
 VÆRI TÖFF:
 * Setja inn edit dialóg möguleika. Ætti ekki að vera stórmál.
