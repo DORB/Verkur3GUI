@@ -20,7 +20,7 @@ AddRelationToProgrammer::~AddRelationToProgrammer()
 
 void AddRelationToProgrammer::getAllComputers()
 {
-    currentComputers = computerService.getAllComputers("ID", false);
+    currentComputers = computerService.getAllComputers("name", false);
     displayAllComputers();
 }
 

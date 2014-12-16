@@ -79,7 +79,7 @@ void ViewComputerDialog::setComputer(Computer computer)
     }
     else
     {
-        ui->label_relations_for_computer->hide();
+        ui->label_relations_for_computer->setText("<center>Has no related Programmers.</center>");
         ui->list_computer_relations->hide();
     }
 }

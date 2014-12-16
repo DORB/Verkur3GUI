@@ -136,6 +136,10 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>list_programmer_relations</tabstop>
+  <tabstop>button_view_programmer_close</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

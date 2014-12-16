@@ -120,7 +120,7 @@ void ViewProgrammerDialog::setProgrammer(Person person)
     }
     else
     {
-        ui->label_programmer_relations->hide();
+        ui->label_programmer_relations->setText("<center>Has no related computers.</center>");
         ui->list_programmer_relations->hide();
     }
 }

@@ -15,10 +15,15 @@ namespace utils {
         }
         else
         {
-            db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
+            bool db_exists = QFile::exists("verkur.sqlite");
+
+            db = QSqlDatabase::addDatabase("QSQLITE", connectionName);                
             db.setDatabaseName("verkur.sqlite");
 
             db.open();
+
+            if(!db_exists)
+                createTables();
         }
 
         return db;
@@ -99,5 +104,24 @@ namespace utils {
     {
         if(islower(str[0]))
             str[0] = toupper(str[0]);
+    }
+
+    void createTables()
+    {
+        QSqlDatabase db = getDatabaseConnection();
+
+        QSqlQuery query(db);
+
+        query.prepare("CREATE TABLE Programmers(\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \"first_name\" VARCHAR NOT NULL, \"last_name\" VARCHAR NOT NULL, \"birth_year\" INTEGER, \"death_year\" INTEGER, \"sex\" CHAR, \"nationality\" VARHCAR, \"imagePath\" VARHCAR)");
+
+        query.exec();
+
+        query.prepare("CREATE TABLE Computers(\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \"name\" VARCHAR NOT NULL, \"year_built\" INTEGER, \"type\" VARCHAR, \"build\" CHAR, \"imagePath\" VARCHAR)");
+
+        query.exec();
+
+        query.prepare("CREATE TABLE Owners(\"c_ID\" INTEGER, \"p_ID\" INTEGER, FOREIGN KEY (c_ID) REFERENCES Computers(ID), FOREIGN KEY (p_ID) REFERENCES Programmers(ID), PRIMARY KEY (c_ID, p_ID))");
+
+        query.exec();
     }
 }

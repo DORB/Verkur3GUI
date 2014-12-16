@@ -197,6 +197,10 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>list_computer_relations</tabstop>
+  <tabstop>button_close_window_computer</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

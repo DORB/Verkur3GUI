@@ -17,6 +17,7 @@ namespace utils {
     bool isYear(const string& year);
     void trimWS(string& str);
     void firstCap(string& str);
+    void createTables();
 }
 
 #endif // UTILITIES_H
