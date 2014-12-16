@@ -23,3 +23,8 @@ void ComputerService::removeComputer(const Computer& computer)
 {
     computerRepository.removeComputer(computer);
 }
+
+QPixmap ComputerService::getComputerPic(const Computer& computer)
+{
+    return computerRepository.getComputerPic(computer);
+}
