@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>407</height>
+    <width>513</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,33 +15,14 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label_programmer_name">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_image_programmer">
          <property name="minimumSize">
           <size>
-           <width>400</width>
+           <width>300</width>
            <height>0</height>
           </size>
          </property>
@@ -51,12 +32,21 @@
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_5"/>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_programmer_nationality">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_programmer_name">
+           <property name="minimumSize">
+            <size>
+             <width>7</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -65,15 +55,8 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Born:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_programmer_born">
            <property name="text">
             <string/>
@@ -83,16 +66,9 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Dead:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_programmer_dead">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_programmer_nationality">
            <property name="text">
             <string/>
            </property>
@@ -102,14 +78,7 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Sex:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_programmer_sex">
            <property name="text">
             <string/>
@@ -123,7 +92,7 @@
          <item>
           <widget class="QLabel" name="label_programmer_relations">
            <property name="text">
-            <string>Relations:</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Relations:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
