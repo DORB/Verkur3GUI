@@ -21,6 +21,24 @@ void ComputerRepository::addComputer(const Computer &computer)
 
 }
 
+void ComputerRepository::updateComputer(const Computer &computer)
+{
+    QSqlQuery query(db);
+
+    query.prepare("UPDATE Computers SET name = ':name' year_built = :year_built type = ':type' build = :build imagePath = ':imagePath' WHERE ID = :ID");
+
+    query.bindValue(":name", QString::fromStdString(computer.getName()));
+    query.bindValue(":year_built", QString::fromStdString(utils::int2str(computer.getBuildYear())));
+    query.bindValue(":type", QString::fromStdString(computer.getType()));
+    query.bindValue(":build", QString::fromStdString(utils::int2str(computer.getBuild())));
+    query.bindValue(":imagePath", QString::fromStdString(computer.getimagePath()));
+    query.bindValue(":ID", QString::fromStdString(utils::int2str(computer.getID())));
+
+    // qDebug() << query.value();
+
+    // query.exec();
+}
+
 void ComputerRepository::removeComputer(const Computer &computer)
 {
     QSqlQuery query(db);

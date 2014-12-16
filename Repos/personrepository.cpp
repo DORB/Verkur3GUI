@@ -22,6 +22,26 @@ void PersonRepository::addProgrammer(const Person& programmer)
     query.exec();
 }
 
+void PersonRepository::updateProgrammer(const Person& programmer)
+{
+    QSqlQuery query(db);
+
+    query.prepare("UPDATE Programmers SET first_name = ':first_name' last_name = ':last_name' birth_year = :birth_year death_year = :death_year sex = ':sex' nationality = ':nationality' imagePath = ':imagePath') WHERE ID = :ID");
+
+    query.bindValue(":first_name", QString::fromStdString(programmer.getFName()));
+    query.bindValue(":last_name", QString::fromStdString(programmer.getLName()));
+    query.bindValue(":birth_year", QString::fromStdString(utils::int2str(programmer.getBY())));
+    query.bindValue(":death_year", QString::fromStdString(utils::int2str(programmer.getDY())));
+    query.bindValue(":sex", QString::fromStdString(programmer.getSex()));
+    query.bindValue(":nationality", QString::fromStdString(programmer.getNationality()));
+    query.bindValue(":imagePath", QString::fromStdString(programmer.getImagePath()));
+    query.bindValue(":ID", QString::fromStdString(utils::int2str(programmer.getID())));
+
+    // qDebug() << query.value();
+
+    // query.exec();
+}
+
 void PersonRepository::removeProgrammer(const Person &programmer)
 {
     QSqlQuery query(db);

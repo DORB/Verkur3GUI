@@ -11,6 +11,7 @@ public:
     ComputerRepository();
 
     void addComputer(const Computer& computer);
+    void updateComputer(const Computer& computer);
     void removeComputer(const Computer& computer);
 
     CompContainer getAllComputers(QString sortString, const bool& desc);

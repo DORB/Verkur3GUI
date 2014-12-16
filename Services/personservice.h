@@ -16,6 +16,7 @@ public:
 
     PersonContainer getAllProgrammers(QString sortString, const bool& desc);
 
+    void updateProgrammer(const Person &programmer);
 private:
     PersonRepository programmerRepository;
 };

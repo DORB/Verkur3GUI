@@ -9,6 +9,11 @@ void PersonService::addProgrammer(Person programmer)
     programmerRepository.addProgrammer(programmer);
 }
 
+void PersonService::updateProgrammer(const Person& programmer)
+{
+    programmerRepository.updateProgrammer(programmer);
+}
+
 PersonContainer PersonService::getAllProgrammers(QString sortString, const bool& desc)
 {
     return programmerRepository.getAllProgrammers(sortString, desc);
