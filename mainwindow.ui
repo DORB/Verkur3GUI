@@ -200,16 +200,6 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="button_programmers_marry">
-              <property name="toolTip">
-               <string>Connect Programmer to a Computer</string>
-              </property>
-              <property name="text">
-               <string>Marry</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <spacer name="horizontalSpacer">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -221,6 +211,13 @@
                </size>
               </property>
              </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_add_relation_programmer">
+              <property name="text">
+               <string>Add Relation</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -375,6 +372,13 @@
                </size>
               </property>
              </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_add_relation_computer">
+              <property name="text">
+               <string>Add Relation</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>

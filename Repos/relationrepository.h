@@ -11,6 +11,7 @@ public:
     CompContainer getRelations(const Person &programmer);
     PersonContainer getRelations(const Computer &computer);
 
+    void addRelations(const Person &programmer, const Computer &computer);
 private:
     QSqlDatabase db;
 };
