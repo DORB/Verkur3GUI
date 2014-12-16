@@ -332,6 +332,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
     QMenu menu;
 
     menu.addAction(ui->action_New_Computer);
+    menu.addAction(ui->action_new_relation_computer);
     menu.addAction(ui->action_Delete_Computer);
     menu.addAction(ui->action_Edit_Computer);
 
@@ -343,9 +344,9 @@ void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &p
     QMenu menu;
 
     menu.addAction(ui->action_new_programmer);
+    menu.addAction(ui->action_new_relation_programmer);
     menu.addAction(ui->action_Delete_Programmer);
     menu.addAction(ui->action_Edit_Programmer);
-    menu.addAction(ui->action_new_relation_programmer);
 
     menu.exec(ui->table_programmers->viewport()->mapToGlobal(pos));
 }
