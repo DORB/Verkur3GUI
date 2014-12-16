@@ -5,7 +5,7 @@
 * ~~Implementa hægrismell á töfluna~~
 * ~~Klára Remove og add fúnksjónir~~
 
-* Implementa Relations. Hvernig??
+* Implementa Relations. Hvernig?? BB
 
 * Ákveða hvernig eigi að tengja BB FYRIR PROGRAMMERS
 	* Hugmynd: Velja í töflu og fyrir neðan er takki sem heitir 'Marry to...'
