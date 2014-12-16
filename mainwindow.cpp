@@ -11,6 +11,7 @@
 #include "addrelationtoprogrammer.h"
 #include "editprogrammerdialog.h"
 #include "addrelationtocomputer.h"
+#include "editcomputerdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -332,7 +333,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 
     menu.addAction(ui->action_New_Computer);
     menu.addAction(ui->action_Delete_Computer);
-    menu.addAction(ui->action_new_relation_computer);
+    menu.addAction(ui->action_Edit_Computer);
 
     menu.exec(ui->table_computers->viewport()->mapToGlobal(pos));
 }
@@ -434,4 +435,18 @@ void MainWindow::on_action_Edit_Programmer_triggered()
     edit.editProgrammer(editProgrammer);
     edit.exec();
 
+}
+
+void MainWindow::on_action_Edit_Computer_triggered()
+{
+    int index = ui->table_computers->currentIndex().row();
+    Computer editComputer = currentlyDisplayedComputers[index];
+
+    qDebug() << QString::fromStdString(editComputer.getName());
+
+    EditComputerDialog edit;
+
+    edit.editComputer(editComputer);
+
+    edit.exec();
 }
