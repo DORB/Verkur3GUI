@@ -219,6 +219,13 @@
              </spacer>
             </item>
             <item>
+             <widget class="QPushButton" name="button_view_programmer">
+              <property name="text">
+               <string>View Programmer</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="button_add_relation_programmer">
               <property name="text">
                <string>Add Relation</string>
@@ -386,6 +393,13 @@
              </spacer>
             </item>
             <item>
+             <widget class="QPushButton" name="button_view_computer">
+              <property name="text">
+               <string>View Computer</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="button_add_relation_computer">
               <property name="text">
                <string>Add Relation</string>
@@ -408,7 +422,7 @@
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -507,6 +521,22 @@
    </property>
    <property name="toolTip">
     <string>Edit Computer</string>
+   </property>
+  </action>
+  <action name="action_view_Computer">
+   <property name="text">
+    <string>View Computer</string>
+   </property>
+   <property name="toolTip">
+    <string>View Computer</string>
+   </property>
+  </action>
+  <action name="action_view_Programmer">
+   <property name="text">
+    <string>View Programmer</string>
+   </property>
+   <property name="toolTip">
+    <string>View Programmer</string>
    </property>
   </action>
  </widget>

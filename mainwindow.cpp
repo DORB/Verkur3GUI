@@ -34,6 +34,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->button_remove_computer->setDisabled(true);
     ui->button_add_relation_programmer->setDisabled(true);
     ui->button_add_relation_computer->setDisabled(true);
+    ui->button_view_computer->setDisabled(true);
+    ui->button_view_programmer->setDisabled(true);
+
 
     getAllComputers();
     getAllProgrammers();    
@@ -163,6 +166,8 @@ void MainWindow::on_tab_choice_tabBarClicked(int index)
     ui->button_add_relation_programmer->setEnabled(false);
     ui->button_remove_computer->setEnabled(false);
     ui->button_remove_programmer->setEnabled(false);
+    ui->button_view_computer->setEnabled(false);
+    ui->button_view_programmer->setEnabled(false);
     ui->table_computers->clearSelection();
     ui->table_programmers->clearSelection();
 }
@@ -187,6 +192,7 @@ void MainWindow::on_table_programmers_clicked(const QModelIndex &index)
 {
     ui->button_remove_programmer->setEnabled(true);
     ui->button_add_relation_programmer->setEnabled(true);
+    ui->button_view_programmer->setEnabled(true);
     // qDebug() << index.row();
 }
 
@@ -331,6 +337,7 @@ void MainWindow::on_table_computers_customContextMenuRequested(const QPoint &pos
 {
     QMenu menu;
 
+    menu.addAction(ui->action_view_Computer);
     menu.addAction(ui->action_New_Computer);
     menu.addAction(ui->action_new_relation_computer);
     menu.addAction(ui->action_Delete_Computer);
@@ -343,6 +350,7 @@ void MainWindow::on_table_programmers_customContextMenuRequested(const QPoint &p
 {
     QMenu menu;
 
+    menu.addAction(ui->action_view_Programmer);
     menu.addAction(ui->action_new_programmer);
     menu.addAction(ui->action_new_relation_programmer);
     menu.addAction(ui->action_Delete_Programmer);
@@ -413,6 +421,7 @@ void MainWindow::on_table_computers_clicked(const QModelIndex &index)
 {
     ui->button_remove_computer->setEnabled(true);
     ui->button_add_relation_computer->setEnabled(true);
+    ui->button_view_computer->setEnabled(true);
 }
 
 void MainWindow::on_action_new_relation_programmer_triggered()
@@ -454,4 +463,28 @@ void MainWindow::on_action_Edit_Computer_triggered()
     edit.exec();
 
     getAllComputers();
+}
+
+void MainWindow::on_action_view_Computer_triggered()
+{
+    QModelIndex index = ui->table_computers->currentIndex();
+    on_table_computers_doubleClicked(index);
+}
+
+void MainWindow::on_action_view_Programmer_triggered()
+{
+    QModelIndex index = ui->table_programmers->currentIndex();
+    on_table_programmers_doubleClicked(index);
+}
+
+void MainWindow::on_button_view_programmer_clicked()
+{
+    QModelIndex index = ui->table_programmers->currentIndex();
+    on_table_programmers_doubleClicked(index);
+}
+
+void MainWindow::on_button_view_computer_clicked()
+{
+    QModelIndex index = ui->table_computers->currentIndex();
+    on_table_computers_doubleClicked(index);
 }

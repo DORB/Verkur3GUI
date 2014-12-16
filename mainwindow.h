@@ -75,6 +75,14 @@ private slots:
 
     void on_action_Edit_Computer_triggered();
 
+    void on_action_view_Computer_triggered();
+
+    void on_action_view_Programmer_triggered();
+
+    void on_button_view_programmer_clicked();
+
+    void on_button_view_computer_clicked();
+
 private:
     void getAllProgrammers();
     void displayAllProgrammers();
