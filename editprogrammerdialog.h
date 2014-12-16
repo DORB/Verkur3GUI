@@ -23,6 +23,8 @@ private slots:
     void on_button_cancel_edit_programmer_clicked();
     void on_button_edit_programmer_clicked();
 
+    void on_button_for_image_clicked();
+
 private:
     Ui::EditProgrammerDialog *ui;
 

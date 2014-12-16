@@ -1,6 +1,7 @@
 #include "editprogrammerdialog.h"
 #include "ui_editprogrammerdialog.h"
 #include "ui_addprogrammerdialog.h"
+#include <QFileDialog>
 
 EditProgrammerDialog::EditProgrammerDialog(QWidget *parent) :
     QDialog(parent),
@@ -93,4 +94,14 @@ void EditProgrammerDialog::validate()
         ui->button_edit_programmer->setEnabled(true);
     else
         ui->button_edit_programmer->setEnabled(false);
+}
+void EditProgrammerDialog::on_button_for_image_clicked()
+{
+    QString filename = QFileDialog::getOpenFileName(
+                        this,
+                        "Browse for image",
+                        "",
+                        "Image files (*.png *.jpg *.bmp)"
+                    );
+    ui->Input_image_path->setText(filename);
 }
